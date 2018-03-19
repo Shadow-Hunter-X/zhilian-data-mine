@@ -1,0 +1,222 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>SpiderDataCude</Database>
+    <Server>localhost\Analysis</Server>
+    <ConnectionString>Data Source=localhost\Analysis;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>ItTkOFuiF+yIyjfI/Ng/2ul2aLg=2018/3/9 17:17:122018/3/9 17:03:45</TimeStamp>
+        <ID>
+          <String>Zhaopin Spider Data Dw</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>BEVuFI/1cuQNsSQIuwo8Zvokn5Y=2018/3/9 17:21:562018/3/9 17:05:18</TimeStamp>
+        <ID>
+          <String>Zhaopin Spider Data Dw</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>wzCYCxA6X3zHaEjthNKuQuGKkl4=2018/3/13 11:49:492018/3/13 11:13:58</TimeStamp>
+        <ID>
+          <String>工种关联分析_DMDSV</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>dnBh5tqcYYqaoHhz6nj4srtgJ4g=2018/3/13 14:23:402018/3/13 13:54:33</TimeStamp>
+        <ID>
+          <String>企业需求决策树_DMDSV</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>KNL58U1ZOU27/QLo7T9sso4ZTmU=2018/3/13 14:50:232018/3/13 14:50:22</TimeStamp>
+        <ID>
+          <String>企业信息决策树_DMDSV</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>lYd9RcXPuzJQKU66TTLHDac4wIE=2018/3/16 14:45:272018/3/16 14:45:27</TimeStamp>
+        <ID>
+          <String>企业维度-神经网络_DMDSV</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>tHaoblCNByTm+d2RlAfI2HizPcw=2018/3/9 17:37:422018/3/9 17:10:38</TimeStamp>
+        <ID>
+          <String>需求维度</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>bd3oYIdGhxrxouHHCQcvULPidmI=2018/3/9 17:40:272018/3/9 17:10:57</TimeStamp>
+        <ID>
+          <String>工种维度</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>qWeB0kk5Binu144jh7r5ejZpcaQ=2018/3/9 17:37:422018/3/9 17:11:17</TimeStamp>
+        <ID>
+          <String>时间维度</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>vnJNKTjj9o7XpQt3EW5wx19a4kE=2018/3/9 17:37:422018/3/9 17:11:34</TimeStamp>
+        <ID>
+          <String>城市维度</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>LSprAF8VltvVZ8517lSCTeJH+m4=2018/3/9 17:44:562018/3/9 17:11:50</TimeStamp>
+        <ID>
+          <String>企业维度</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>MXrfJ1ajviyuwiLijmfRtwPm9eQ=2018/3/13 11:13:582018/3/13 11:13:58</TimeStamp>
+        <ID>
+          <String>工种关联分析_DMDim</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>IE0Oukns08qEUxsenqvppvDIHz4=2018/3/13 13:54:332018/3/13 13:54:33</TimeStamp>
+        <ID>
+          <String>企业需求决策树_DMDim</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>d2AEk5PS/+HLkLXGsllHjYOCbco=2018/3/13 14:50:232018/3/13 14:50:22</TimeStamp>
+        <ID>
+          <String>企业信息决策树_DMDim</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>uOwO6WFAaYqKVAKBNQwxWtIPO9Q=2018/3/16 14:45:272018/3/16 14:45:27</TimeStamp>
+        <ID>
+          <String>企业维度-神经网络_DMDim</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>rYsQeiVM5e/jZV7EV0OOtRe6FKo=2018/3/17 17:21:262018/3/9 17:14:029QRlNUh8EXoJrbqQ6FWRuiBlIV4=2018/3/12 10:50:242018/3/9 17:14:02</TimeStamp>
+        <ID>
+          <String>ZhaopinCube</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>McP4zvS9jK4ENUxUB2PBC9Y0eW4=2018/3/13 11:11:592018/3/13 10:32:56SbGyd0GsQX8xfXPNF6mYOXxD5G0=2018/3/13 10:32:582018/3/13 10:32:57</TimeStamp>
+        <ID>
+          <String>智联数据集_DM</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>cJwwi96qoWz5aUM2ux6WfM0F3GE=2018/3/13 11:13:592018/3/13 11:13:582A5kxQWciI1/JhbWTiKEOx6DGnc=2018/3/13 11:13:592018/3/13 11:13:59</TimeStamp>
+        <ID>
+          <String>工种关联分析_DM</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>tpqvNVuCgZa53iu2XegGQKol4xA=2018/3/13 13:54:332018/3/13 13:54:33pO0Lw/jsC6DlPnQndAIm5yYX7Uk=2018/3/13 13:54:332018/3/13 13:54:33</TimeStamp>
+        <ID>
+          <String>企业需求决策树_DM</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>Dwek0Xx4G/RCHCfxnFfzCQGhx/E=2018/3/13 14:50:232018/3/13 14:50:23AtY9RaqRviPmH4wHQrd3RYgDGPw=2018/3/13 14:50:232018/3/13 14:50:23</TimeStamp>
+        <ID>
+          <String>企业信息决策树_DM</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>HtL/wEUciiKvYuu0g/LZYdR4Reg=2018/3/16 14:45:282018/3/16 14:45:27s0rFFBB0WwfglDo9brfxm3GZzAY=2018/3/16 14:45:282018/3/16 14:45:28</TimeStamp>
+        <ID>
+          <String>企业维度-神经网络_DM_DM</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.MiningStructure</Type>
+        <TimeStamp>v5nl+2wwPd7NFN9hhAKwqKSEGTQ=2018/3/13 10:35:012018/3/13 10:32:55</TimeStamp>
+        <ID>
+          <String>企业k-means聚类</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.MiningStructure</Type>
+        <TimeStamp>iwvxEIsH2J++oE+05RAaw8P+nw8=2018/3/13 11:13:582018/3/13 11:13:58</TimeStamp>
+        <ID>
+          <String>工种关联分析</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.MiningStructure</Type>
+        <TimeStamp>NIlLOENaZGtveXhylyM6xmxQOJM=2018/3/13 14:27:252018/3/13 13:54:32</TimeStamp>
+        <ID>
+          <String>企业需求决策树分析</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.MiningStructure</Type>
+        <TimeStamp>dkCbvtYee5y84/mWGErBHrcLsJo=2018/3/13 14:50:222018/3/13 14:50:22</TimeStamp>
+        <ID>
+          <String>企业信息决策树</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.MiningStructure</Type>
+        <TimeStamp>5UaoF+Fz5Ymn10ZhoxYEiyWfhJU=2018/3/14 11:45:312018/3/14 11:45:31</TimeStamp>
+        <ID>
+          <String>企业信息贝叶斯推测</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.MiningStructure</Type>
+        <TimeStamp>OZI1p6PVUBbITbe5+VAlUZrAGto=2018/3/16 14:45:272018/3/16 14:45:26</TimeStamp>
+        <ID>
+          <String>企业维度-神经网络</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>kdiqIxExgxIGi5ILgjp/pnetT9s=2018/3/6 16:43:462018/3/6 16:43:46</TimeStamp>
+      <ID>
+        <String>SpiderDataCude</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2018-03-17T09:21:41.61Z</LastDeployed>
+</DeploymentSnapshot>

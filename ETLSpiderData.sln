@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "ETLSpiderData", "ETLSpiderData\ETLSpiderData.dtproj", "{C203A2E8-C450-4236-9B7B-76C45D6C35D1}"
+EndProject
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "ReportData", "ReportData\ReportData.rptproj", "{DBC45DD0-1A7F-4940-962F-578BE50AD2DA}"
+EndProject
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "SpiderDataCude", "SpiderDataCude\SpiderDataCude.dwproj", "{1B987415-E9D9-49E1-B0B8-7C521E13C26E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Development|Default = Development|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C203A2E8-C450-4236-9B7B-76C45D6C35D1}.Debug|Default.ActiveCfg = Development
+		{C203A2E8-C450-4236-9B7B-76C45D6C35D1}.Debug|Default.Build.0 = Development
+		{C203A2E8-C450-4236-9B7B-76C45D6C35D1}.DebugLocal|Default.ActiveCfg = Development
+		{C203A2E8-C450-4236-9B7B-76C45D6C35D1}.DebugLocal|Default.Build.0 = Development
+		{C203A2E8-C450-4236-9B7B-76C45D6C35D1}.Development|Default.ActiveCfg = Development
+		{C203A2E8-C450-4236-9B7B-76C45D6C35D1}.Development|Default.Build.0 = Development
+		{C203A2E8-C450-4236-9B7B-76C45D6C35D1}.Release|Default.ActiveCfg = Development
+		{C203A2E8-C450-4236-9B7B-76C45D6C35D1}.Release|Default.Build.0 = Development
+		{DBC45DD0-1A7F-4940-962F-578BE50AD2DA}.Debug|Default.ActiveCfg = Debug
+		{DBC45DD0-1A7F-4940-962F-578BE50AD2DA}.Debug|Default.Build.0 = Debug
+		{DBC45DD0-1A7F-4940-962F-578BE50AD2DA}.Debug|Default.Deploy.0 = Debug
+		{DBC45DD0-1A7F-4940-962F-578BE50AD2DA}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{DBC45DD0-1A7F-4940-962F-578BE50AD2DA}.DebugLocal|Default.Build.0 = DebugLocal
+		{DBC45DD0-1A7F-4940-962F-578BE50AD2DA}.Development|Default.ActiveCfg = DebugLocal
+		{DBC45DD0-1A7F-4940-962F-578BE50AD2DA}.Development|Default.Build.0 = DebugLocal
+		{DBC45DD0-1A7F-4940-962F-578BE50AD2DA}.Release|Default.ActiveCfg = Release
+		{DBC45DD0-1A7F-4940-962F-578BE50AD2DA}.Release|Default.Build.0 = Release
+		{DBC45DD0-1A7F-4940-962F-578BE50AD2DA}.Release|Default.Deploy.0 = Release
+		{1B987415-E9D9-49E1-B0B8-7C521E13C26E}.Debug|Default.ActiveCfg = Development
+		{1B987415-E9D9-49E1-B0B8-7C521E13C26E}.Debug|Default.Build.0 = Development
+		{1B987415-E9D9-49E1-B0B8-7C521E13C26E}.Debug|Default.Deploy.0 = Development
+		{1B987415-E9D9-49E1-B0B8-7C521E13C26E}.DebugLocal|Default.ActiveCfg = Development
+		{1B987415-E9D9-49E1-B0B8-7C521E13C26E}.DebugLocal|Default.Build.0 = Development
+		{1B987415-E9D9-49E1-B0B8-7C521E13C26E}.DebugLocal|Default.Deploy.0 = Development
+		{1B987415-E9D9-49E1-B0B8-7C521E13C26E}.Development|Default.ActiveCfg = Development
+		{1B987415-E9D9-49E1-B0B8-7C521E13C26E}.Development|Default.Build.0 = Development
+		{1B987415-E9D9-49E1-B0B8-7C521E13C26E}.Development|Default.Deploy.0 = Development
+		{1B987415-E9D9-49E1-B0B8-7C521E13C26E}.Release|Default.ActiveCfg = Development
+		{1B987415-E9D9-49E1-B0B8-7C521E13C26E}.Release|Default.Build.0 = Development
+		{1B987415-E9D9-49E1-B0B8-7C521E13C26E}.Release|Default.Deploy.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

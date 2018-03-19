@@ -1,0 +1,729 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/25/2018 5:18:42 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-V3KCCRU"
+  DTS:CreatorName="DESKTOP-V3KCCRU\NEO"
+  DTS:DTSID="{D3EF1E4E-BDB2-4177-9FEA-3036D361839E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3008.28"
+  DTS:LocaleID="2052"
+  DTS:ObjectName="BuildDateDim"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{545AA6E3-375F-4843-9A28-2835601911E3}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\GetDateData"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="数据流任务"
+      DTS:DTSID="{95823E2D-DA9D-4A8E-8FDC-D4CDF1B4652C}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GetDateData"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\GetDateData\DimDate"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="将数据加载到使用数据库表或视图的符合 ADO.NET 的数据库中。将数据加载到新表或现有表中。例如，使用适用于 ODBC 的 ADO.NET 访问接口将数据加载到 ODBC 目标中。;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; 保留所有权利; http://www.microsoft.com/sql/support;2"
+              description="将数据加载到使用数据库表或视图的符合 ADO.NET 的数据库中。将数据加载到新表或现有表中。例如，使用适用于 ODBC 的 ADO.NET 访问接口将数据加载到 ODBC 目标中。"
+              name="DimDate"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="目标数据库表名。"
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"DimDate"</property>
+                <property
+                  dataType="System.Int32"
+                  description="指定每批的行数。默认值为 0，即使用与 SSIS 内部缓冲区相同的大小。 "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="命令超时前等待的时间(秒)。值为 0，表示无限期等待。 "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="指定是否使用 SqlBulkCopy 接口来改进大容量插入操作的性能。只有某些特定提供程序支持此接口。"
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\GetDateData\DimDate.Connections[IDbConnection]"
+                  connectionManagerID="{091ADE31-0DEC-4A93-B9AF-8FD2F1485793}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.ZhaopinSpiderDataDw]"
+                  description="托管连接管理器"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ADO NET 目标输入">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].Columns[Datetime]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Datetime"
+                      externalMetadataColumnId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].ExternalColumns[Datetime]"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[Datetime]" />
+                    <inputColumn
+                      refId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].Columns[DateKey]"
+                      cachedDataType="i4"
+                      cachedName="DateKey"
+                      externalMetadataColumnId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].ExternalColumns[DateKey]"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[DateKey]" />
+                    <inputColumn
+                      refId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].Columns[DYear]"
+                      cachedDataType="i4"
+                      cachedName="DYear"
+                      externalMetadataColumnId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].ExternalColumns[DYear]"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[DYear]" />
+                    <inputColumn
+                      refId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].Columns[MonthOfYear]"
+                      cachedDataType="i4"
+                      cachedName="MonthOfYear"
+                      externalMetadataColumnId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].ExternalColumns[MonthOfYear]"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[MonthOfYear]" />
+                    <inputColumn
+                      refId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].Columns[DaysOfMonth]"
+                      cachedDataType="i4"
+                      cachedName="DaysOfMonth"
+                      externalMetadataColumnId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].ExternalColumns[DaysOfMonth]"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[DaysOfMonth]" />
+                    <inputColumn
+                      refId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].Columns[QuaterOfYear]"
+                      cachedDataType="i4"
+                      cachedName="QuaterOfYear"
+                      externalMetadataColumnId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].ExternalColumns[QuaterOfYear]"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[QuaterOfYear]" />
+                    <inputColumn
+                      refId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].Columns[WeeksOfYear]"
+                      cachedDataType="i4"
+                      cachedName="WeeksOfYear"
+                      externalMetadataColumnId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].ExternalColumns[WeeksOfYear]"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[WeeksOfYear]" />
+                    <inputColumn
+                      refId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].Columns[DaysOfWeek]"
+                      cachedDataType="i4"
+                      cachedName="DaysOfWeek"
+                      externalMetadataColumnId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].ExternalColumns[DaysOfWeek]"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[DaysOfWeek]" />
+                    <inputColumn
+                      refId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].Columns[DDaysOfYear]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="DDaysOfYear"
+                      externalMetadataColumnId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].ExternalColumns[DDaysOfYear]"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[DDaysOfYear]" />
+                    <inputColumn
+                      refId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].Columns[Weekend]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="Weekend"
+                      externalMetadataColumnId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].ExternalColumns[Weekend]"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[Weekend]" />
+                    <inputColumn
+                      refId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].Columns[HalfYear]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="HalfYear"
+                      externalMetadataColumnId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].ExternalColumns[HalfYear]"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[HalfYear]" />
+                    <inputColumn
+                      refId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].Columns[QuatersName]"
+                      cachedDataType="wstr"
+                      cachedLength="63"
+                      cachedName="QuatersName"
+                      externalMetadataColumnId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].ExternalColumns[QuatersName]"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[QuatersName]" />
+                    <inputColumn
+                      refId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].Columns[MonthsName]"
+                      cachedDataType="wstr"
+                      cachedLength="94"
+                      cachedName="MonthsName"
+                      externalMetadataColumnId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].ExternalColumns[MonthsName]"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[MonthsName]" />
+                    <inputColumn
+                      refId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].Columns[DaysName]"
+                      cachedDataType="wstr"
+                      cachedLength="125"
+                      cachedName="DaysName"
+                      externalMetadataColumnId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].ExternalColumns[DaysName]"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[DaysName]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].ExternalColumns[Datetime]"
+                      dataType="dbTimeStamp"
+                      name="Datetime" />
+                    <externalMetadataColumn
+                      refId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].ExternalColumns[DateKey]"
+                      dataType="i4"
+                      name="DateKey" />
+                    <externalMetadataColumn
+                      refId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].ExternalColumns[DYear]"
+                      dataType="i4"
+                      name="DYear" />
+                    <externalMetadataColumn
+                      refId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].ExternalColumns[MonthOfYear]"
+                      dataType="i4"
+                      name="MonthOfYear" />
+                    <externalMetadataColumn
+                      refId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].ExternalColumns[DaysOfMonth]"
+                      dataType="i4"
+                      name="DaysOfMonth" />
+                    <externalMetadataColumn
+                      refId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].ExternalColumns[QuaterOfYear]"
+                      dataType="i4"
+                      name="QuaterOfYear" />
+                    <externalMetadataColumn
+                      refId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].ExternalColumns[WeeksOfYear]"
+                      dataType="i4"
+                      name="WeeksOfYear" />
+                    <externalMetadataColumn
+                      refId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].ExternalColumns[DaysOfWeek]"
+                      dataType="i4"
+                      name="DaysOfWeek" />
+                    <externalMetadataColumn
+                      refId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].ExternalColumns[DDaysOfYear]"
+                      dataType="wstr"
+                      length="30"
+                      name="DDaysOfYear" />
+                    <externalMetadataColumn
+                      refId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].ExternalColumns[Weekend]"
+                      dataType="wstr"
+                      length="30"
+                      name="Weekend" />
+                    <externalMetadataColumn
+                      refId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].ExternalColumns[HalfYear]"
+                      dataType="wstr"
+                      length="3"
+                      name="HalfYear" />
+                    <externalMetadataColumn
+                      refId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].ExternalColumns[QuatersName]"
+                      dataType="wstr"
+                      length="63"
+                      name="QuatersName" />
+                    <externalMetadataColumn
+                      refId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].ExternalColumns[MonthsName]"
+                      dataType="wstr"
+                      length="94"
+                      name="MonthsName" />
+                    <externalMetadataColumn
+                      refId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入].ExternalColumns[DaysName]"
+                      dataType="wstr"
+                      length="125"
+                      name="DaysName" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\GetDateData\DimDate.Outputs[ADO NET 目标错误输出]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ADO NET 目标错误输出"
+                  synchronousInputId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\GetDateData\DimDate.Outputs[ADO NET 目标错误输出].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\GetDateData\DimDate.Outputs[ADO NET 目标错误输出].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\GetDateData\DimDate.Outputs[ADO NET 目标错误输出].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\GetDateData\DimDate.Outputs[ADO NET 目标错误输出].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\GetDateData\GetDateData"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="通过使用相应的 .NET Framework 数据访问接口来使用 SQL Server、OLE DB、ODBC 或 Oracle 中的数据。使用 Transact-SQL 语句定义结果集。例如，使用适用于 SQL Server 的 .NET Framework 数据访问接口从 SQL Server 中提取数据。;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; 保留所有权利; http://www.microsoft.com/sql/support;4"
+              description="通过使用相应的 .NET Framework 数据访问接口来使用 SQL Server、OLE DB、ODBC 或 Oracle 中的数据。使用 Transact-SQL 语句定义结果集。例如，使用适用于 SQL Server 的 .NET Framework 数据访问接口从 SQL Server 中提取数据。"
+              name="GetDateData"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="指定组件用来提取数据的 SQL 语句。"
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [PK_日期] Datetime,
+       Convert(int,CONVERT(varchar(12),[PK_日期],112)) AS DateKey,
+	   DATEPART(YEAR,[PK_日期]) AS DYear,
+	   DATEPART(MONTH,[PK_日期]) AS MonthOfYear,
+	   DATEPART(DAY,[PK_日期]) AS DaysOfMonth,
+	   DATEPART(QUARTER,[PK_日期]) AS QuaterOfYear,
+	   DATEPART(WEEK,[PK_日期]) AS WeeksOfYear,
+	   DATEPART(WEEKDAY,[PK_日期]) AS DaysOfWeek,
+	   DATENAME(DAYOFYEAR,[PK_日期]) AS DDaysOfYear,
+	   DATENAME(WEEKDAY,[PK_日期]) AS Weekend,
+	   CASE 
+	   WHEN DATEPART(MONTH,[PK_日期]) &gt; 6 THEN N'下半年'
+	   ELSE N'上半年'
+	   END AS HalfYear,
+	   DATENAME(YEAR,[PK_日期]) + N'年' + DATENAME(QUARTER,[PK_日期]) + N'季度' AS QuatersName,
+	   DATENAME(YEAR,[PK_日期]) + N'年' + DATENAME(QUARTER,[PK_日期]) + N'季度' + DATENAME(MONTH,[PK_日期]) + N'月' AS MonthsName,
+	   DATENAME(YEAR,[PK_日期]) + N'年' + DATENAME(QUARTER,[PK_日期]) + N'季度' + DATENAME(MONTH,[PK_日期]) + N'月' + DATENAME(DAY,[PK_日期]) + N'号' AS DaysName
+  FROM [ZhaopinSpiderData].[dbo].[DateDim]</property>
+                <property
+                  dataType="System.Int32"
+                  description="命令超时前等待的时间(秒)。值为 0，表示无限期等待。"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="指示是否允许非字符串外部列隐式地转换为输出列中的字符串。"
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="源数据库表名。"
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="指定检索外部列信息的模式"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\GetDateData\GetDateData.Connections[IDbConnection]"
+                  connectionManagerID="{A81BC240-E138-4117-8489-A2497DE91F1F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.ZhaopinSpiderData]"
+                  description="托管连接管理器"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出]"
+                  name="ADO NET 源输出">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[Datetime]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].ExternalColumns[Datetime]"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[Datetime]"
+                      name="Datetime"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[DateKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].ExternalColumns[DateKey]"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[DateKey]"
+                      name="DateKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[DYear]"
+                      dataType="i4"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].ExternalColumns[DYear]"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[DYear]"
+                      name="DYear"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[MonthOfYear]"
+                      dataType="i4"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].ExternalColumns[MonthOfYear]"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[MonthOfYear]"
+                      name="MonthOfYear"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[DaysOfMonth]"
+                      dataType="i4"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].ExternalColumns[DaysOfMonth]"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[DaysOfMonth]"
+                      name="DaysOfMonth"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[QuaterOfYear]"
+                      dataType="i4"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].ExternalColumns[QuaterOfYear]"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[QuaterOfYear]"
+                      name="QuaterOfYear"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[WeeksOfYear]"
+                      dataType="i4"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].ExternalColumns[WeeksOfYear]"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[WeeksOfYear]"
+                      name="WeeksOfYear"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[DaysOfWeek]"
+                      dataType="i4"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].ExternalColumns[DaysOfWeek]"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[DaysOfWeek]"
+                      name="DaysOfWeek"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[DDaysOfYear]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].ExternalColumns[DDaysOfYear]"
+                      length="30"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[DDaysOfYear]"
+                      name="DDaysOfYear"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[Weekend]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].ExternalColumns[Weekend]"
+                      length="30"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[Weekend]"
+                      name="Weekend"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[HalfYear]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].ExternalColumns[HalfYear]"
+                      length="3"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[HalfYear]"
+                      name="HalfYear"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[QuatersName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].ExternalColumns[QuatersName]"
+                      length="63"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[QuatersName]"
+                      name="QuatersName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[MonthsName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].ExternalColumns[MonthsName]"
+                      length="94"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[MonthsName]"
+                      name="MonthsName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[DaysName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].ExternalColumns[DaysName]"
+                      length="125"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].Columns[DaysName]"
+                      name="DaysName"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].ExternalColumns[Datetime]"
+                      dataType="dbTimeStamp"
+                      name="Datetime" />
+                    <externalMetadataColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].ExternalColumns[DateKey]"
+                      dataType="i4"
+                      name="DateKey" />
+                    <externalMetadataColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].ExternalColumns[DYear]"
+                      dataType="i4"
+                      name="DYear" />
+                    <externalMetadataColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].ExternalColumns[MonthOfYear]"
+                      dataType="i4"
+                      name="MonthOfYear" />
+                    <externalMetadataColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].ExternalColumns[DaysOfMonth]"
+                      dataType="i4"
+                      name="DaysOfMonth" />
+                    <externalMetadataColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].ExternalColumns[QuaterOfYear]"
+                      dataType="i4"
+                      name="QuaterOfYear" />
+                    <externalMetadataColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].ExternalColumns[WeeksOfYear]"
+                      dataType="i4"
+                      name="WeeksOfYear" />
+                    <externalMetadataColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].ExternalColumns[DaysOfWeek]"
+                      dataType="i4"
+                      name="DaysOfWeek" />
+                    <externalMetadataColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].ExternalColumns[DDaysOfYear]"
+                      dataType="wstr"
+                      length="30"
+                      name="DDaysOfYear" />
+                    <externalMetadataColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].ExternalColumns[Weekend]"
+                      dataType="wstr"
+                      length="30"
+                      name="Weekend" />
+                    <externalMetadataColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].ExternalColumns[HalfYear]"
+                      dataType="wstr"
+                      length="3"
+                      name="HalfYear" />
+                    <externalMetadataColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].ExternalColumns[QuatersName]"
+                      dataType="wstr"
+                      length="63"
+                      name="QuatersName" />
+                    <externalMetadataColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].ExternalColumns[MonthsName]"
+                      dataType="wstr"
+                      length="94"
+                      name="MonthsName" />
+                    <externalMetadataColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出].ExternalColumns[DaysName]"
+                      dataType="wstr"
+                      length="125"
+                      name="DaysName" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源错误输出]"
+                  isErrorOut="true"
+                  name="ADO NET 源错误输出">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源错误输出].Columns[Datetime]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源错误输出].Columns[Datetime]"
+                      name="Datetime" />
+                    <outputColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源错误输出].Columns[DateKey]"
+                      dataType="i4"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源错误输出].Columns[DateKey]"
+                      name="DateKey" />
+                    <outputColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源错误输出].Columns[DYear]"
+                      dataType="i4"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源错误输出].Columns[DYear]"
+                      name="DYear" />
+                    <outputColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源错误输出].Columns[MonthOfYear]"
+                      dataType="i4"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源错误输出].Columns[MonthOfYear]"
+                      name="MonthOfYear" />
+                    <outputColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源错误输出].Columns[DaysOfMonth]"
+                      dataType="i4"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源错误输出].Columns[DaysOfMonth]"
+                      name="DaysOfMonth" />
+                    <outputColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源错误输出].Columns[QuaterOfYear]"
+                      dataType="i4"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源错误输出].Columns[QuaterOfYear]"
+                      name="QuaterOfYear" />
+                    <outputColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源错误输出].Columns[WeeksOfYear]"
+                      dataType="i4"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源错误输出].Columns[WeeksOfYear]"
+                      name="WeeksOfYear" />
+                    <outputColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源错误输出].Columns[DaysOfWeek]"
+                      dataType="i4"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源错误输出].Columns[DaysOfWeek]"
+                      name="DaysOfWeek" />
+                    <outputColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源错误输出].Columns[DDaysOfYear]"
+                      dataType="wstr"
+                      length="30"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源错误输出].Columns[DDaysOfYear]"
+                      name="DDaysOfYear" />
+                    <outputColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源错误输出].Columns[Weekend]"
+                      dataType="wstr"
+                      length="30"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源错误输出].Columns[Weekend]"
+                      name="Weekend" />
+                    <outputColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源错误输出].Columns[HalfYear]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源错误输出].Columns[HalfYear]"
+                      name="HalfYear" />
+                    <outputColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源错误输出].Columns[QuatersName]"
+                      dataType="wstr"
+                      length="63"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源错误输出].Columns[QuatersName]"
+                      name="QuatersName" />
+                    <outputColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源错误输出].Columns[MonthsName]"
+                      dataType="wstr"
+                      length="94"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源错误输出].Columns[MonthsName]"
+                      name="MonthsName" />
+                    <outputColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源错误输出].Columns[DaysName]"
+                      dataType="wstr"
+                      length="125"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源错误输出].Columns[DaysName]"
+                      name="DaysName" />
+                    <outputColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源错误输出].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源错误输出].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\GetDateData\GetDateData.Outputs[ADO NET 源错误输出].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\GetDateData\GetDateData.Outputs[ADO NET 源错误输出].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\GetDateData.Paths[ADO NET 源输出]"
+              endId="Package\GetDateData\DimDate.Inputs[ADO NET 目标输入]"
+              name="ADO NET 源输出"
+              startId="Package\GetDateData\GetDateData.Outputs[ADO NET 源输出]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--此 CDATA 部分包含包的布局信息。该部分包括(x,y)坐标、宽度和高度之类的信息。-->
+<!--如果您手动编辑此部分并且出错，则可以删除此部分。 -->
+<!--该包仍将能够正常加载，但以前的布局信息将丢失，并且设计器将自动在设计图面上重新排列这些元素。-->
+<Objects
+  Version="8">
+  <!--下面的每个节点都将包含不会影响运行时行为的属性。-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="145,42"
+          Id="Package\GetDateData"
+          TopLeft="174.166659745905,25.071427290537" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\GetDateData">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="145,42"
+          Id="Package\GetDateData\GetDateData"
+          TopLeft="193.333325650957,11.142856573572" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\GetDateData\DimDate"
+          TopLeft="195.833325551616,155.999992030008" />
+        <EdgeLayout
+          Id="Package\GetDateData.Paths[ADO NET 源输出]"
+          TopLeft="265.833325650957,53.142856573572">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9.50000009934109,102.857135456436"
+              Start="0,0"
+              End="-9.50000009934109,95.3571354564359">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.428567728218" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,47.428567728218"
+                    Point2="0,51.428567728218"
+                    Point3="-4,51.428567728218" />
+                  <mssgle:LineSegment
+                    End="-5.50000009934109,51.428567728218" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5.50000009934109,51.428567728218"
+                    Point2="-9.50000009934109,51.428567728218"
+                    Point3="-9.50000009934109,55.428567728218" />
+                  <mssgle:LineSegment
+                    End="-9.50000009934109,95.3571354564359" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\GetDateData\GetDateData">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\GetDateData\DimDate">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

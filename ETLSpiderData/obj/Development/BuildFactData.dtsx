@@ -1,0 +1,1191 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/25/2018 4:23:10 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-V3KCCRU"
+  DTS:CreatorName="DESKTOP-V3KCCRU\NEO"
+  DTS:DTSID="{EADC4150-4B13-4A51-8ACE-C2E5FF9B5C17}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3008.28"
+  DTS:LocaleID="2052"
+  DTS:ObjectName="BuildFactData"
+  DTS:PackageType="5"
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{9BF72AD9-D24F-4374-A0CA-81EF58CC8128}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{CC8084F4-068C-475E-8FB5-5B96DBB2753C}"
+      DTS:ObjectName="count">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{011C8640-06C0-4E67-934B-F31E20402F0C}"
+      DTS:ObjectName="total">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7D128EBC-6070-4E94-9EB0-7A66A0CEAF7A}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="total">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\BuildFactData"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="数据流任务"
+      DTS:DTSID="{BD467839-CFE7-4B2C-9E2B-3632D6960118}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="BuildFactData"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\BuildFactData\DataCount"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="行计数;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; 保留所有权利; http://www.microsoft.com/sql/support;0"
+              description="在行通过数据流时计算行数。例如，使用已处理的行数决定是否执行清除操作，或更新电子邮件中的文本以传递处理状态。"
+              name="DataCount">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="指定保存行计数的变量。"
+                  name="VariableName">User::total</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\BuildFactData\DataCount.Inputs[行计数 输入 1]"
+                  hasSideEffects="true"
+                  name="行计数 输入 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\BuildFactData\DataCount.Outputs[行计数 输出 1]"
+                  name="行计数 输出 1"
+                  synchronousInputId="Package\BuildFactData\DataCount.Inputs[行计数 输入 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\BuildFactData\FactData"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="将数据加载到使用数据库表或视图的符合 ADO.NET 的数据库中。将数据加载到新表或现有表中。例如，使用适用于 ODBC 的 ADO.NET 访问接口将数据加载到 ODBC 目标中。;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; 保留所有权利; http://www.microsoft.com/sql/support;2"
+              description="将数据加载到使用数据库表或视图的符合 ADO.NET 的数据库中。将数据加载到新表或现有表中。例如，使用适用于 ODBC 的 ADO.NET 访问接口将数据加载到 ODBC 目标中。"
+              name="FactData"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="目标数据库表名。"
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"FactData"</property>
+                <property
+                  dataType="System.Int32"
+                  description="指定每批的行数。默认值为 0，即使用与 SSIS 内部缓冲区相同的大小。 "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="命令超时前等待的时间(秒)。值为 0，表示无限期等待。 "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="指定是否使用 SqlBulkCopy 接口来改进大容量插入操作的性能。只有某些特定提供程序支持此接口。"
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\BuildFactData\FactData.Connections[IDbConnection]"
+                  connectionManagerID="{091ADE31-0DEC-4A93-B9AF-8FD2F1485793}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.ZhaopinSpiderDataDw]"
+                  description="托管连接管理器"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ADO NET 目标输入">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].Columns[title_name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="title_name"
+                      externalMetadataColumnId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[title_name]"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[title_name]" />
+                    <inputColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].Columns[company_name]"
+                      cachedDataType="wstr"
+                      cachedLength="150"
+                      cachedName="company_name"
+                      externalMetadataColumnId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[company_name]"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[company_name]" />
+                    <inputColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].Columns[title_salary]"
+                      cachedDataType="wstr"
+                      cachedLength="150"
+                      cachedName="title_salary"
+                      externalMetadataColumnId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[title_salary]"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[title_salary]" />
+                    <inputColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].Columns[company_address]"
+                      cachedDataType="wstr"
+                      cachedLength="260"
+                      cachedName="company_address"
+                      externalMetadataColumnId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[company_address]"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[company_address]" />
+                    <inputColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].Columns[issuer_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="issuer_date"
+                      externalMetadataColumnId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[issuer_date]"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[issuer_date]" />
+                    <inputColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].Columns[work_experience]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="work_experience"
+                      externalMetadataColumnId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[work_experience]"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[work_experience]" />
+                    <inputColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].Columns[education_background]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="education_background"
+                      externalMetadataColumnId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[education_background]"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[education_background]" />
+                    <inputColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].Columns[company_scale]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="company_scale"
+                      externalMetadataColumnId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[company_scale]"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[company_scale]" />
+                    <inputColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].Columns[company_type]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="company_type"
+                      externalMetadataColumnId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[company_type]"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[company_type]" />
+                    <inputColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].Columns[job_introduce]"
+                      cachedDataType="wstr"
+                      cachedLength="4000"
+                      cachedName="job_introduce"
+                      externalMetadataColumnId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[job_introduce]"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[job_introduce]" />
+                    <inputColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].Columns[job_tag]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="job_tag"
+                      externalMetadataColumnId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[job_tag]"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[job_tag]" />
+                    <inputColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].Columns[page_num]"
+                      cachedDataType="i4"
+                      cachedName="page_num"
+                      externalMetadataColumnId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[page_num]"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[page_num]" />
+                    <inputColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].Columns[index_num]"
+                      cachedDataType="i4"
+                      cachedName="index_num"
+                      externalMetadataColumnId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[index_num]"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[index_num]" />
+                    <inputColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].Columns[crawl_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="crawl_date"
+                      externalMetadataColumnId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[crawl_date]"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[crawl_date]" />
+                    <inputColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].Columns[job_sub_tag]"
+                      cachedDataType="wstr"
+                      cachedLength="60"
+                      cachedName="job_sub_tag"
+                      externalMetadataColumnId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[job_sub_tag]"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[job_sub_tag]" />
+                    <inputColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].Columns[MinSalary]"
+                      cachedDataType="wstr"
+                      cachedLength="150"
+                      cachedName="MinSalary"
+                      externalMetadataColumnId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[MinSalary]"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[MinSalary]" />
+                    <inputColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].Columns[MaxSalary]"
+                      cachedDataType="wstr"
+                      cachedLength="150"
+                      cachedName="MaxSalary"
+                      externalMetadataColumnId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[MaxSalary]"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[MaxSalary]" />
+                    <inputColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].Columns[full_title]"
+                      cachedDataType="wstr"
+                      cachedLength="111"
+                      cachedName="full_title"
+                      externalMetadataColumnId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[full_title]"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[full_title]" />
+                    <inputColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].Columns[RequireKey]"
+                      cachedDataType="wstr"
+                      cachedLength="16"
+                      cachedName="RequireKey"
+                      externalMetadataColumnId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[RequireKey]"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[RequireKey]" />
+                    <inputColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].Columns[MinSalaryNum]"
+                      cachedDataType="ui4"
+                      cachedName="MinSalaryNum"
+                      externalMetadataColumnId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[MinSalaryNum]"
+                      lineageId="Package\BuildFactData\TranslateSalary.Outputs[数据转换输出].Columns[MinSalaryNum]" />
+                    <inputColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].Columns[MaxSalaryNum]"
+                      cachedDataType="ui4"
+                      cachedName="MaxSalaryNum"
+                      externalMetadataColumnId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[MaxSalaryNum]"
+                      lineageId="Package\BuildFactData\TranslateSalary.Outputs[数据转换输出].Columns[MaxSalaryNum]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[title_name]"
+                      dataType="wstr"
+                      length="50"
+                      name="title_name" />
+                    <externalMetadataColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[company_name]"
+                      dataType="wstr"
+                      length="150"
+                      name="company_name" />
+                    <externalMetadataColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[title_salary]"
+                      dataType="wstr"
+                      length="150"
+                      name="title_salary" />
+                    <externalMetadataColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[company_address]"
+                      dataType="wstr"
+                      length="260"
+                      name="company_address" />
+                    <externalMetadataColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[issuer_date]"
+                      dataType="dbTimeStamp"
+                      name="issuer_date" />
+                    <externalMetadataColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[work_experience]"
+                      dataType="wstr"
+                      length="50"
+                      name="work_experience" />
+                    <externalMetadataColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[education_background]"
+                      dataType="wstr"
+                      length="50"
+                      name="education_background" />
+                    <externalMetadataColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[company_scale]"
+                      dataType="wstr"
+                      length="50"
+                      name="company_scale" />
+                    <externalMetadataColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[company_type]"
+                      dataType="wstr"
+                      length="50"
+                      name="company_type" />
+                    <externalMetadataColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[job_introduce]"
+                      dataType="wstr"
+                      length="4000"
+                      name="job_introduce" />
+                    <externalMetadataColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[job_tag]"
+                      dataType="wstr"
+                      length="50"
+                      name="job_tag" />
+                    <externalMetadataColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[page_num]"
+                      dataType="i4"
+                      name="page_num" />
+                    <externalMetadataColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[index_num]"
+                      dataType="i4"
+                      name="index_num" />
+                    <externalMetadataColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[crawl_date]"
+                      dataType="dbTimeStamp"
+                      name="crawl_date" />
+                    <externalMetadataColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[job_sub_tag]"
+                      dataType="wstr"
+                      length="60"
+                      name="job_sub_tag" />
+                    <externalMetadataColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[MinSalary]"
+                      dataType="wstr"
+                      length="150"
+                      name="MinSalary" />
+                    <externalMetadataColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[MaxSalary]"
+                      dataType="wstr"
+                      length="150"
+                      name="MaxSalary" />
+                    <externalMetadataColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[full_title]"
+                      dataType="wstr"
+                      length="111"
+                      name="full_title" />
+                    <externalMetadataColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[RequireKey]"
+                      dataType="wstr"
+                      length="16"
+                      name="RequireKey" />
+                    <externalMetadataColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[MinSalaryNum]"
+                      dataType="i8"
+                      name="MinSalaryNum" />
+                    <externalMetadataColumn
+                      refId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入].ExternalColumns[MaxSalaryNum]"
+                      dataType="i8"
+                      name="MaxSalaryNum" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\BuildFactData\FactData.Outputs[ADO NET 目标错误输出]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ADO NET 目标错误输出"
+                  synchronousInputId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\BuildFactData\FactData.Outputs[ADO NET 目标错误输出].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\BuildFactData\FactData.Outputs[ADO NET 目标错误输出].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\BuildFactData\FactData.Outputs[ADO NET 目标错误输出].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\BuildFactData\FactData.Outputs[ADO NET 目标错误输出].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\BuildFactData\GetFactData"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="通过使用相应的 .NET Framework 数据访问接口来使用 SQL Server、OLE DB、ODBC 或 Oracle 中的数据。使用 Transact-SQL 语句定义结果集。例如，使用适用于 SQL Server 的 .NET Framework 数据访问接口从 SQL Server 中提取数据。;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; 保留所有权利; http://www.microsoft.com/sql/support;4"
+              description="通过使用相应的 .NET Framework 数据访问接口来使用 SQL Server、OLE DB、ODBC 或 Oracle 中的数据。使用 Transact-SQL 语句定义结果集。例如，使用适用于 SQL Server 的 .NET Framework 数据访问接口从 SQL Server 中提取数据。"
+              name="GetFactData"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="指定组件用来提取数据的 SQL 语句。"
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+       [title_name]
+      ,[company_name]
+      ,[title_salary]
+      ,[company_address]
+      ,[issuer_date]
+      ,[work_experience]
+      ,[education_background]
+      ,[company_scale]
+      ,[company_type]
+      ,rtrim(ltrim(REPLACE([job_introuduce],CHAR(13) + CHAR(10),''))) AS job_introduce
+      ,[job_tag]
+      ,[page_num]
+      ,[index_num]
+      ,CONVERT(datetime,CONVERT(date,[crawl_date]))crawl_date
+      ,[job_sub_tag]
+	  ,CASE CHARINDEX('-',title_salary)
+	   WHEN 0 THEN '0'
+	   ELSE SUBSTRING(title_salary,0,CHARINDEX('-',title_salary))
+	   END AS MinSalary
+	  ,CASE CHARINDEX('元',title_salary)
+	   WHEN 0 THEN '0'
+	   ELSE SUBSTRING(title_salary,CHARINDEX('-',title_salary)+1,CHARINDEX('元',title_salary)-CHARINDEX('-',title_salary)-1)
+	   END AS MaxSalary
+       ,job_tag + '-' +job_sub_tag AS full_title
+      ,SUBSTRING(education_background,CHARINDEX(':',education_background)+1,8) + SUBSTRING(work_experience,CHARINDEX(':',work_experience)+1,8) AS RequireKey
+  FROM [ZhaopinSpiderData].[dbo].[JobInformation]
+ WHERE CONVERT(datetime,crawl_date) &gt; '2017-12-1' AND CONVERT(datetime,crawl_date) &lt; '2018-1-31'</property>
+                <property
+                  dataType="System.Int32"
+                  description="命令超时前等待的时间(秒)。值为 0，表示无限期等待。"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="指示是否允许非字符串外部列隐式地转换为输出列中的字符串。"
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="源数据库表名。"
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="指定检索外部列信息的模式"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\BuildFactData\GetFactData.Connections[IDbConnection]"
+                  connectionManagerID="{A81BC240-E138-4117-8489-A2497DE91F1F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.ZhaopinSpiderData]"
+                  description="托管连接管理器"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出]"
+                  name="ADO NET 源输出">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[title_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].ExternalColumns[title_name]"
+                      length="50"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[title_name]"
+                      name="title_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[company_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].ExternalColumns[company_name]"
+                      length="150"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[company_name]"
+                      name="company_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[title_salary]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].ExternalColumns[title_salary]"
+                      length="150"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[title_salary]"
+                      name="title_salary"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[company_address]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].ExternalColumns[company_address]"
+                      length="260"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[company_address]"
+                      name="company_address"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[issuer_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].ExternalColumns[issuer_date]"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[issuer_date]"
+                      name="issuer_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[work_experience]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].ExternalColumns[work_experience]"
+                      length="50"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[work_experience]"
+                      name="work_experience"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[education_background]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].ExternalColumns[education_background]"
+                      length="50"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[education_background]"
+                      name="education_background"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[company_scale]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].ExternalColumns[company_scale]"
+                      length="50"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[company_scale]"
+                      name="company_scale"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[company_type]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].ExternalColumns[company_type]"
+                      length="50"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[company_type]"
+                      name="company_type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[job_introduce]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].ExternalColumns[job_introduce]"
+                      length="4000"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[job_introduce]"
+                      name="job_introduce"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[job_tag]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].ExternalColumns[job_tag]"
+                      length="50"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[job_tag]"
+                      name="job_tag"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[page_num]"
+                      dataType="i4"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].ExternalColumns[page_num]"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[page_num]"
+                      name="page_num"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[index_num]"
+                      dataType="i4"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].ExternalColumns[index_num]"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[index_num]"
+                      name="index_num"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[crawl_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].ExternalColumns[crawl_date]"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[crawl_date]"
+                      name="crawl_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[job_sub_tag]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].ExternalColumns[job_sub_tag]"
+                      length="60"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[job_sub_tag]"
+                      name="job_sub_tag"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[MinSalary]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].ExternalColumns[MinSalary]"
+                      length="150"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[MinSalary]"
+                      name="MinSalary"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[MaxSalary]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].ExternalColumns[MaxSalary]"
+                      length="150"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[MaxSalary]"
+                      name="MaxSalary"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[full_title]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].ExternalColumns[full_title]"
+                      length="111"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[full_title]"
+                      name="full_title"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[RequireKey]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].ExternalColumns[RequireKey]"
+                      length="16"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[RequireKey]"
+                      name="RequireKey"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].ExternalColumns[title_name]"
+                      dataType="wstr"
+                      length="50"
+                      name="title_name" />
+                    <externalMetadataColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].ExternalColumns[company_name]"
+                      dataType="wstr"
+                      length="150"
+                      name="company_name" />
+                    <externalMetadataColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].ExternalColumns[title_salary]"
+                      dataType="wstr"
+                      length="150"
+                      name="title_salary" />
+                    <externalMetadataColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].ExternalColumns[company_address]"
+                      dataType="wstr"
+                      length="260"
+                      name="company_address" />
+                    <externalMetadataColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].ExternalColumns[issuer_date]"
+                      dataType="dbTimeStamp"
+                      name="issuer_date" />
+                    <externalMetadataColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].ExternalColumns[work_experience]"
+                      dataType="wstr"
+                      length="50"
+                      name="work_experience" />
+                    <externalMetadataColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].ExternalColumns[education_background]"
+                      dataType="wstr"
+                      length="50"
+                      name="education_background" />
+                    <externalMetadataColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].ExternalColumns[company_scale]"
+                      dataType="wstr"
+                      length="50"
+                      name="company_scale" />
+                    <externalMetadataColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].ExternalColumns[company_type]"
+                      dataType="wstr"
+                      length="50"
+                      name="company_type" />
+                    <externalMetadataColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].ExternalColumns[job_introduce]"
+                      dataType="wstr"
+                      length="4000"
+                      name="job_introduce" />
+                    <externalMetadataColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].ExternalColumns[job_tag]"
+                      dataType="wstr"
+                      length="50"
+                      name="job_tag" />
+                    <externalMetadataColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].ExternalColumns[page_num]"
+                      dataType="i4"
+                      name="page_num" />
+                    <externalMetadataColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].ExternalColumns[index_num]"
+                      dataType="i4"
+                      name="index_num" />
+                    <externalMetadataColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].ExternalColumns[crawl_date]"
+                      dataType="dbTimeStamp"
+                      name="crawl_date" />
+                    <externalMetadataColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].ExternalColumns[job_sub_tag]"
+                      dataType="wstr"
+                      length="60"
+                      name="job_sub_tag" />
+                    <externalMetadataColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].ExternalColumns[MinSalary]"
+                      dataType="wstr"
+                      length="150"
+                      name="MinSalary" />
+                    <externalMetadataColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].ExternalColumns[MaxSalary]"
+                      dataType="wstr"
+                      length="150"
+                      name="MaxSalary" />
+                    <externalMetadataColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].ExternalColumns[full_title]"
+                      dataType="wstr"
+                      length="111"
+                      name="full_title" />
+                    <externalMetadataColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].ExternalColumns[RequireKey]"
+                      dataType="wstr"
+                      length="16"
+                      name="RequireKey" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出]"
+                  isErrorOut="true"
+                  name="ADO NET 源错误输出">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[title_name]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[title_name]"
+                      name="title_name" />
+                    <outputColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[company_name]"
+                      dataType="wstr"
+                      length="150"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[company_name]"
+                      name="company_name" />
+                    <outputColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[title_salary]"
+                      dataType="wstr"
+                      length="150"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[title_salary]"
+                      name="title_salary" />
+                    <outputColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[company_address]"
+                      dataType="wstr"
+                      length="260"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[company_address]"
+                      name="company_address" />
+                    <outputColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[issuer_date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[issuer_date]"
+                      name="issuer_date" />
+                    <outputColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[work_experience]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[work_experience]"
+                      name="work_experience" />
+                    <outputColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[education_background]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[education_background]"
+                      name="education_background" />
+                    <outputColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[company_scale]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[company_scale]"
+                      name="company_scale" />
+                    <outputColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[company_type]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[company_type]"
+                      name="company_type" />
+                    <outputColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[job_introduce]"
+                      dataType="wstr"
+                      length="4000"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[job_introduce]"
+                      name="job_introduce" />
+                    <outputColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[job_tag]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[job_tag]"
+                      name="job_tag" />
+                    <outputColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[page_num]"
+                      dataType="i4"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[page_num]"
+                      name="page_num" />
+                    <outputColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[index_num]"
+                      dataType="i4"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[index_num]"
+                      name="index_num" />
+                    <outputColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[crawl_date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[crawl_date]"
+                      name="crawl_date" />
+                    <outputColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[job_sub_tag]"
+                      dataType="wstr"
+                      length="60"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[job_sub_tag]"
+                      name="job_sub_tag" />
+                    <outputColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[MinSalary]"
+                      dataType="wstr"
+                      length="150"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[MinSalary]"
+                      name="MinSalary" />
+                    <outputColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[MaxSalary]"
+                      dataType="wstr"
+                      length="150"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[MaxSalary]"
+                      name="MaxSalary" />
+                    <outputColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[full_title]"
+                      dataType="wstr"
+                      length="111"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[full_title]"
+                      name="full_title" />
+                    <outputColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[RequireKey]"
+                      dataType="wstr"
+                      length="16"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[RequireKey]"
+                      name="RequireKey" />
+                    <outputColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源错误输出].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\BuildFactData\TranslateSalary"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="数据转换;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; 保留所有权利; http://www.microsoft.com/sql/support;0"
+              description="数据转换"
+              name="TranslateSalary"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\BuildFactData\TranslateSalary.Inputs[数据转换输入]"
+                  name="数据转换输入">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\BuildFactData\TranslateSalary.Inputs[数据转换输入].Columns[MinSalary]"
+                      cachedDataType="wstr"
+                      cachedLength="150"
+                      cachedName="MinSalary"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[MinSalary]" />
+                    <inputColumn
+                      refId="Package\BuildFactData\TranslateSalary.Inputs[数据转换输入].Columns[MaxSalary]"
+                      cachedDataType="wstr"
+                      cachedLength="150"
+                      cachedName="MaxSalary"
+                      lineageId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[MaxSalary]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\BuildFactData\TranslateSalary.Outputs[数据转换输出]"
+                  exclusionGroup="1"
+                  name="数据转换输出"
+                  synchronousInputId="Package\BuildFactData\TranslateSalary.Inputs[数据转换输入]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\BuildFactData\TranslateSalary.Outputs[数据转换输出].Columns[MinSalaryNum]"
+                      dataType="ui4"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\BuildFactData\TranslateSalary.Outputs[数据转换输出].Columns[MinSalaryNum]"
+                      name="MinSalaryNum"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="指定用作转换数据源的输入列。"
+                          name="SourceInputColumnLineageID">#{Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[MinSalary]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="指示该列是否使用更快、不分区域设置的分析例程。"
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\BuildFactData\TranslateSalary.Outputs[数据转换输出].Columns[MaxSalaryNum]"
+                      dataType="ui4"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\BuildFactData\TranslateSalary.Outputs[数据转换输出].Columns[MaxSalaryNum]"
+                      name="MaxSalaryNum"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="指定用作转换数据源的输入列。"
+                          name="SourceInputColumnLineageID">#{Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出].Columns[MaxSalary]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="指示该列是否使用更快、不分区域设置的分析例程。"
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\BuildFactData\TranslateSalary.Outputs[数据转换错误输出]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="数据转换错误输出"
+                  synchronousInputId="Package\BuildFactData\TranslateSalary.Inputs[数据转换输入]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\BuildFactData\TranslateSalary.Outputs[数据转换错误输出].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\BuildFactData\TranslateSalary.Outputs[数据转换错误输出].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\BuildFactData\TranslateSalary.Outputs[数据转换错误输出].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\BuildFactData\TranslateSalary.Outputs[数据转换错误输出].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\BuildFactData.Paths[ADO NET 源输出]"
+              endId="Package\BuildFactData\TranslateSalary.Inputs[数据转换输入]"
+              name="ADO NET 源输出"
+              startId="Package\BuildFactData\GetFactData.Outputs[ADO NET 源输出]" />
+            <path
+              refId="Package\BuildFactData.Paths[数据转换输出]"
+              endId="Package\BuildFactData\DataCount.Inputs[行计数 输入 1]"
+              name="数据转换输出"
+              startId="Package\BuildFactData\TranslateSalary.Outputs[数据转换输出]" />
+            <path
+              refId="Package\BuildFactData.Paths[行计数 输出 1]"
+              endId="Package\BuildFactData\FactData.Inputs[ADO NET 目标输入]"
+              name="行计数 输出 1"
+              startId="Package\BuildFactData\DataCount.Outputs[行计数 输出 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--此 CDATA 部分包含包的布局信息。该部分包括(x,y)坐标、宽度和高度之类的信息。-->
+<!--如果您手动编辑此部分并且出错，则可以删除此部分。 -->
+<!--该包仍将能够正常加载，但以前的布局信息将丢失，并且设计器将自动在设计图面上重新排列这些元素。-->
+<Objects
+  Version="8">
+  <!--下面的每个节点都将包含不会影响运行时行为的属性。-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\BuildFactData"
+          TopLeft="176.666659646564,22.285713147144" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\BuildFactData">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="145,42"
+          Id="Package\BuildFactData\GetFactData"
+          TopLeft="219.999991257986,6.499999667917" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\BuildFactData\DataCount"
+          TopLeft="224.166657759084,157.85713479227" />
+        <NodeLayout
+          Size="169,42"
+          Id="Package\BuildFactData\TranslateSalary"
+          TopLeft="218.333324657546,82.642852920659" />
+        <EdgeLayout
+          Id="Package\BuildFactData.Paths[数据转换输出]"
+          TopLeft="302.833324657546,124.642852920659">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-12.1666668984624,33.214281871611"
+              Start="0,0"
+              End="-12.1666668984624,25.714281871611">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.6071409358055" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.6071409358055"
+                    Point2="0,16.6071409358055"
+                    Point3="-4,16.6071409358055" />
+                  <mssgle:LineSegment
+                    End="-8.16666689846244,16.6071409358055" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-8.16666689846244,16.6071409358055"
+                    Point2="-12.1666668984624,16.6071409358055"
+                    Point3="-12.1666668984624,20.6071409358055" />
+                  <mssgle:LineSegment
+                    End="-12.1666668984624,25.714281871611" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\BuildFactData.Paths[ADO NET 源输出]"
+          TopLeft="292.499991257986,48.499999667917">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10.3333333995607,34.142853252742"
+              Start="0,0"
+              End="10.3333333995607,26.642853252742">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.071426626371" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.071426626371"
+                    Point2="0,17.071426626371"
+                    Point3="4,17.071426626371" />
+                  <mssgle:LineSegment
+                    End="6.33333339956067,17.071426626371" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6.33333339956067,17.071426626371"
+                    Point2="10.3333333995607,17.071426626371"
+                    Point3="10.3333333995607,21.071426626371" />
+                  <mssgle:LineSegment
+                    End="10.3333333995607,26.642853252742" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="127,42"
+          Id="Package\BuildFactData\FactData"
+          TopLeft="214.166658156448,265.571415003466" />
+        <EdgeLayout
+          Id="Package\BuildFactData.Paths[行计数 输出 1]"
+          TopLeft="290.666657759084,199.85713479227">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-12.9999996026357,65.7142802111959"
+              Start="0,0"
+              End="-12.9999996026357,58.2142802111959">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.8571401055979" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.8571401055979"
+                    Point2="0,32.8571401055979"
+                    Point3="-4,32.8571401055979" />
+                  <mssgle:LineSegment
+                    End="-8.99999960263568,32.8571401055979" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-8.99999960263568,32.8571401055979"
+                    Point2="-12.9999996026357,32.8571401055979"
+                    Point3="-12.9999996026357,36.8571401055979" />
+                  <mssgle:LineSegment
+                    End="-12.9999996026357,58.2142802111959" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\BuildFactData\GetFactData">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\BuildFactData\FactData">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

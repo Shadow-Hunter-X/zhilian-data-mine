@@ -1,0 +1,463 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/12/2018 9:05:12 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-V3KCCRU"
+  DTS:CreatorName="DESKTOP-V3KCCRU\NEO"
+  DTS:DTSID="{503FFD68-7192-4735-B4CB-946945EF4DD0}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3008.28"
+  DTS:LocaleID="2052"
+  DTS:ObjectName="ETLPack"
+  DTS:PackageType="5"
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{A732EBCF-1652-498A-B135-F099E7ED27EE}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\init_clear"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="数据流任务"
+      DTS:DTSID="{636346F4-88A5-4BCA-B66C-AE6D8EDC458C}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="init_clear"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\init_clear\JonInforSource"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="通过使用相应的 .NET Framework 数据访问接口来使用 SQL Server、OLE DB、ODBC 或 Oracle 中的数据。使用 Transact-SQL 语句定义结果集。例如，使用适用于 SQL Server 的 .NET Framework 数据访问接口从 SQL Server 中提取数据。;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; 保留所有权利; http://www.microsoft.com/sql/support;4"
+              description="通过使用相应的 .NET Framework 数据访问接口来使用 SQL Server、OLE DB、ODBC 或 Oracle 中的数据。使用 Transact-SQL 语句定义结果集。例如，使用适用于 SQL Server 的 .NET Framework 数据访问接口从 SQL Server 中提取数据。"
+              name="JonInforSource"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="指定组件用来提取数据的 SQL 语句。"
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="命令超时前等待的时间(秒)。值为 0，表示无限期等待。"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="指示是否允许非字符串外部列隐式地转换为输出列中的字符串。"
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="源数据库表名。"
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."JobInformation"</property>
+                <property
+                  dataType="System.Int32"
+                  description="指定检索外部列信息的模式"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">0</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\init_clear\JonInforSource.Connections[IDbConnection]"
+                  connectionManagerID="{A81BC240-E138-4117-8489-A2497DE91F1F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.ZhaopinSpiderData]"
+                  description="托管连接管理器"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出]"
+                  name="ADO NET 源输出">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].Columns[title_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].ExternalColumns[title_name]"
+                      length="50"
+                      lineageId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].Columns[title_name]"
+                      name="title_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].Columns[company_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].ExternalColumns[company_name]"
+                      length="150"
+                      lineageId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].Columns[company_name]"
+                      name="company_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].Columns[title_salary]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].ExternalColumns[title_salary]"
+                      length="150"
+                      lineageId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].Columns[title_salary]"
+                      name="title_salary"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].Columns[company_address]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].ExternalColumns[company_address]"
+                      length="260"
+                      lineageId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].Columns[company_address]"
+                      name="company_address"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].Columns[issuer_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].ExternalColumns[issuer_date]"
+                      lineageId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].Columns[issuer_date]"
+                      name="issuer_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].Columns[work_experience]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].ExternalColumns[work_experience]"
+                      length="50"
+                      lineageId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].Columns[work_experience]"
+                      name="work_experience"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].Columns[education_background]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].ExternalColumns[education_background]"
+                      length="50"
+                      lineageId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].Columns[education_background]"
+                      name="education_background"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].Columns[company_scale]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].ExternalColumns[company_scale]"
+                      length="50"
+                      lineageId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].Columns[company_scale]"
+                      name="company_scale"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].Columns[company_type]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].ExternalColumns[company_type]"
+                      length="50"
+                      lineageId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].Columns[company_type]"
+                      name="company_type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].Columns[job_introuduce]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].ExternalColumns[job_introuduce]"
+                      length="2050"
+                      lineageId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].Columns[job_introuduce]"
+                      name="job_introuduce"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].Columns[job_tag]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].ExternalColumns[job_tag]"
+                      length="50"
+                      lineageId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].Columns[job_tag]"
+                      name="job_tag"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].Columns[page_num]"
+                      dataType="i4"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].ExternalColumns[page_num]"
+                      lineageId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].Columns[page_num]"
+                      name="page_num"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].Columns[index_num]"
+                      dataType="i4"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].ExternalColumns[index_num]"
+                      lineageId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].Columns[index_num]"
+                      name="index_num"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].Columns[crawl_date]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].ExternalColumns[crawl_date]"
+                      length="50"
+                      lineageId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].Columns[crawl_date]"
+                      name="crawl_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].Columns[job_sub_tag]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].ExternalColumns[job_sub_tag]"
+                      length="60"
+                      lineageId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].Columns[job_sub_tag]"
+                      name="job_sub_tag"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].ExternalColumns[title_name]"
+                      dataType="wstr"
+                      length="50"
+                      name="title_name" />
+                    <externalMetadataColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].ExternalColumns[company_name]"
+                      dataType="wstr"
+                      length="150"
+                      name="company_name" />
+                    <externalMetadataColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].ExternalColumns[title_salary]"
+                      dataType="wstr"
+                      length="150"
+                      name="title_salary" />
+                    <externalMetadataColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].ExternalColumns[company_address]"
+                      dataType="wstr"
+                      length="260"
+                      name="company_address" />
+                    <externalMetadataColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].ExternalColumns[issuer_date]"
+                      dataType="dbTimeStamp"
+                      name="issuer_date" />
+                    <externalMetadataColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].ExternalColumns[work_experience]"
+                      dataType="wstr"
+                      length="50"
+                      name="work_experience" />
+                    <externalMetadataColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].ExternalColumns[education_background]"
+                      dataType="wstr"
+                      length="50"
+                      name="education_background" />
+                    <externalMetadataColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].ExternalColumns[company_scale]"
+                      dataType="wstr"
+                      length="50"
+                      name="company_scale" />
+                    <externalMetadataColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].ExternalColumns[company_type]"
+                      dataType="wstr"
+                      length="50"
+                      name="company_type" />
+                    <externalMetadataColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].ExternalColumns[job_introuduce]"
+                      dataType="wstr"
+                      length="2050"
+                      name="job_introuduce" />
+                    <externalMetadataColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].ExternalColumns[job_tag]"
+                      dataType="wstr"
+                      length="50"
+                      name="job_tag" />
+                    <externalMetadataColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].ExternalColumns[page_num]"
+                      dataType="i4"
+                      name="page_num" />
+                    <externalMetadataColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].ExternalColumns[index_num]"
+                      dataType="i4"
+                      name="index_num" />
+                    <externalMetadataColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].ExternalColumns[crawl_date]"
+                      dataType="wstr"
+                      length="50"
+                      name="crawl_date" />
+                    <externalMetadataColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源输出].ExternalColumns[job_sub_tag]"
+                      dataType="wstr"
+                      length="60"
+                      name="job_sub_tag" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源错误输出]"
+                  isErrorOut="true"
+                  name="ADO NET 源错误输出">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源错误输出].Columns[title_name]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\init_clear\JonInforSource.Outputs[ADO NET 源错误输出].Columns[title_name]"
+                      name="title_name" />
+                    <outputColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源错误输出].Columns[company_name]"
+                      dataType="wstr"
+                      length="150"
+                      lineageId="Package\init_clear\JonInforSource.Outputs[ADO NET 源错误输出].Columns[company_name]"
+                      name="company_name" />
+                    <outputColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源错误输出].Columns[title_salary]"
+                      dataType="wstr"
+                      length="150"
+                      lineageId="Package\init_clear\JonInforSource.Outputs[ADO NET 源错误输出].Columns[title_salary]"
+                      name="title_salary" />
+                    <outputColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源错误输出].Columns[company_address]"
+                      dataType="wstr"
+                      length="260"
+                      lineageId="Package\init_clear\JonInforSource.Outputs[ADO NET 源错误输出].Columns[company_address]"
+                      name="company_address" />
+                    <outputColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源错误输出].Columns[issuer_date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\init_clear\JonInforSource.Outputs[ADO NET 源错误输出].Columns[issuer_date]"
+                      name="issuer_date" />
+                    <outputColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源错误输出].Columns[work_experience]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\init_clear\JonInforSource.Outputs[ADO NET 源错误输出].Columns[work_experience]"
+                      name="work_experience" />
+                    <outputColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源错误输出].Columns[education_background]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\init_clear\JonInforSource.Outputs[ADO NET 源错误输出].Columns[education_background]"
+                      name="education_background" />
+                    <outputColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源错误输出].Columns[company_scale]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\init_clear\JonInforSource.Outputs[ADO NET 源错误输出].Columns[company_scale]"
+                      name="company_scale" />
+                    <outputColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源错误输出].Columns[company_type]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\init_clear\JonInforSource.Outputs[ADO NET 源错误输出].Columns[company_type]"
+                      name="company_type" />
+                    <outputColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源错误输出].Columns[job_introuduce]"
+                      dataType="wstr"
+                      length="2050"
+                      lineageId="Package\init_clear\JonInforSource.Outputs[ADO NET 源错误输出].Columns[job_introuduce]"
+                      name="job_introuduce" />
+                    <outputColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源错误输出].Columns[job_tag]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\init_clear\JonInforSource.Outputs[ADO NET 源错误输出].Columns[job_tag]"
+                      name="job_tag" />
+                    <outputColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源错误输出].Columns[page_num]"
+                      dataType="i4"
+                      lineageId="Package\init_clear\JonInforSource.Outputs[ADO NET 源错误输出].Columns[page_num]"
+                      name="page_num" />
+                    <outputColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源错误输出].Columns[index_num]"
+                      dataType="i4"
+                      lineageId="Package\init_clear\JonInforSource.Outputs[ADO NET 源错误输出].Columns[index_num]"
+                      name="index_num" />
+                    <outputColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源错误输出].Columns[crawl_date]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\init_clear\JonInforSource.Outputs[ADO NET 源错误输出].Columns[crawl_date]"
+                      name="crawl_date" />
+                    <outputColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源错误输出].Columns[job_sub_tag]"
+                      dataType="wstr"
+                      length="60"
+                      lineageId="Package\init_clear\JonInforSource.Outputs[ADO NET 源错误输出].Columns[job_sub_tag]"
+                      name="job_sub_tag" />
+                    <outputColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源错误输出].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\init_clear\JonInforSource.Outputs[ADO NET 源错误输出].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\init_clear\JonInforSource.Outputs[ADO NET 源错误输出].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\init_clear\JonInforSource.Outputs[ADO NET 源错误输出].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--此 CDATA 部分包含包的布局信息。该部分包括(x,y)坐标、宽度和高度之类的信息。-->
+<!--如果您手动编辑此部分并且出错，则可以删除此部分。 -->
+<!--该包仍将能够正常加载，但以前的布局信息将丢失，并且设计器将自动在设计图面上重新排列这些元素。-->
+<Objects
+  Version="8">
+  <!--下面的每个节点都将包含不会影响运行时行为的属性。-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="139,42"
+          Id="Package\init_clear"
+          TopLeft="277.166655871604,20.357142098096" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\init_clear">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="163,42"
+          Id="Package\init_clear\JonInforSource"
+          TopLeft="239.999990463257,4.64285690565499" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\init_clear\JonInforSource">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

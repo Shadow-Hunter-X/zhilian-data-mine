@@ -1,0 +1,833 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="2eba366e-fbf9-4331-9cc9-5072045e7c55" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>ZhaopinCube</ID>
+  <Name>智联数据集</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="36" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1658" scrolltop="-1508" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="75" x="22199" y="11986" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="018600009001905f010004cbcecce5" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="企业维度" left="10958" top="9810" logicalid="18" controlid="1" masterid="0" hint1="0" hint2="0" width="4710" height="2725" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c000066120000a50a0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_DimCompany" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="城市维度" left="7972" top="-1200" logicalid="19" controlid="2" masterid="0" hint1="0" hint2="0" width="4366" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c00000e11000057070000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_DimCity" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="需求维度" left="20" top="5628" logicalid="20" controlid="3" masterid="0" hint1="0" hint2="0" width="5636" height="2302" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c000004160000fe080000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_DimRequire" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="招聘数据" left="8127" top="1844" logicalid="21" controlid="4" masterid="0" hint1="0" hint2="0" width="4128" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c00002010000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj />
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="工种维度" left="14584" top="5628" logicalid="22" controlid="5" masterid="0" hint1="0" hint2="0" width="4260" height="2302" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000a4100000fe080000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_DimJobtype" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="时间维度" left="5099" top="8927" logicalid="23" controlid="6" masterid="0" hint1="0" hint2="0" width="3000" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000b80b000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_DimDate" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="10714" top="6544" logicalid="24" controlid="7" masterid="0" hint1="0" hint2="0" width="877" height="3766" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_FactData_DimCompany]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="4" sourceattachpoint="0" destattachpoint="11" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="11113" y="9810" />
+              <point x="11113" y="8327" />
+              <point x="11291" y="8327" />
+              <point x="11291" y="6844" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="8106" top="180" logicalid="25" controlid="8" masterid="0" hint1="0" hint2="0" width="799" height="1964" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_FactData_DimCity]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="4" sourceattachpoint="1" destattachpoint="0" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="8505" y="679" />
+              <point x="8505" y="1261" />
+              <point x="8541" y="1261" />
+              <point x="8541" y="1844" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="5356" top="5694" logicalid="26" controlid="9" masterid="0" hint1="0" hint2="0" width="3071" height="935" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_FactData_DimRequire]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="4" sourceattachpoint="19" destattachpoint="28" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="5656" y="6229" />
+              <point x="6891" y="6229" />
+              <point x="6891" y="5994" />
+              <point x="8127" y="5994" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="7300" top="6544" logicalid="27" controlid="10" masterid="0" hint1="0" hint2="0" width="2091" height="2883" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_FactData_DimDate1]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="6" destid="4" sourceattachpoint="8" destattachpoint="3" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="7699" y="8927" />
+              <point x="7699" y="7886" />
+              <point x="9091" y="7886" />
+              <point x="9091" y="6844" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="6750" top="6544" logicalid="28" controlid="11" masterid="0" hint1="0" hint2="0" width="2091" height="2883" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_FactData_DimDate]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="6" destid="4" sourceattachpoint="6" destattachpoint="1" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="7149" y="8927" />
+              <point x="7149" y="7886" />
+              <point x="8541" y="7886" />
+              <point x="8541" y="6844" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="11955" top="5694" logicalid="29" controlid="12" masterid="0" hint1="0" hint2="0" width="2929" height="935" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="15856113" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_FactData_DimJobtype]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="5" destid="4" sourceattachpoint="14" destattachpoint="29" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="14584" y="6229" />
+              <point x="13420" y="6229" />
+              <point x="13420" y="5994" />
+              <point x="12255" y="5994" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="招聘数据" left="0" top="0" logicalid="30" controlid="13" masterid="0" hint1="0" hint2="0" width="4797" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000bd12000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj />
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="招聘数据" left="0" top="0" logicalid="31" controlid="14" masterid="0" hint1="0" hint2="0" width="4797" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000bd12000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj />
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="招聘数据" left="0" top="0" logicalid="32" controlid="15" masterid="0" hint1="0" hint2="0" width="4797" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000bd12000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj />
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="招聘数据" left="0" top="0" logicalid="33" controlid="16" masterid="0" hint1="0" hint2="0" width="4797" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000bd12000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj />
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="招聘数据" left="0" top="0" logicalid="34" controlid="17" masterid="0" hint1="0" hint2="0" width="4797" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000c0000bd12000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_FactData" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-1658</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-1508</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>-1200</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>75</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="9cc9a6e4-7a0f-4c8a-919c-d68f4f916f41">
+      <ID>Crawl Date</ID>
+      <Name>爬取时间</Name>
+      <DimensionID>时间维度</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="8ca5d9e0-7306-4fee-a26a-b1dc47bbf3ae">
+          <AttributeID>Datetime</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="88c6c671-a829-4a70-9619-bb3df035da76">
+          <AttributeID>D Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="0acb5b91-7500-40f2-9f5f-8d174f3f3f23">
+          <AttributeID>Quaters Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="7f9fd379-c4dc-4097-9c30-4ec95b4215d7">
+          <AttributeID>Months Name</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="ecc7c975-ad2e-461d-83bf-e3eeea1cfc6f">
+          <HierarchyID>层次结构</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="df2e68b6-b78d-4ffb-aa32-1714334292a4">
+      <ID>企业维度</ID>
+      <Name>企业维度</Name>
+      <DimensionID>企业维度</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="16901b17-a36c-4522-97bc-b761bff97012">
+          <AttributeID>企业名称</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b74981fc-220c-4a03-bf81-aadc51160235">
+          <AttributeID>企业类型</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="155ff6f8-976d-42ec-8c98-a5da02bc1dab">
+          <AttributeID>企业规模</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ead497a3-a1bd-4e68-a05f-ae7157be6059">
+          <AttributeID>需求热度</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b613cb2f-ef34-44b4-bd35-7c26c0b50169">
+          <AttributeID>排序</AttributeID>
+          <AttributeHierarchyEnabled>false</AttributeHierarchyEnabled>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="5b27661e-2d29-48ba-bb7a-d6c5ab2e2f36">
+          <HierarchyID>层次结构</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="61716e5b-6dc2-4483-9106-62f90aa3df10">
+      <ID>Issuer Date</ID>
+      <Name>发布时间</Name>
+      <DimensionID>时间维度</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="ba5f5a67-0375-45ee-87c1-de5a98c1cf12">
+          <AttributeID>Datetime</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5c00d85e-6c9d-4a71-9907-c35c15e4a464">
+          <AttributeID>D Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="700b6e6e-83b0-4a4d-af8e-1a32decd9dc8">
+          <AttributeID>Quaters Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="04e36fe9-c8af-45c9-a800-e47235003fe2">
+          <AttributeID>Months Name</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="9a2a7ec4-d6f2-4339-994f-d64fa4a61f0b">
+          <HierarchyID>层次结构</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="0678856a-8684-43ea-8270-953d254a11f5">
+      <ID>城市维度</ID>
+      <Name>城市维度</Name>
+      <DimensionID>城市维度</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="230a127e-9f81-4493-a19d-de0d658e1c53">
+          <AttributeID>城市</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b90ae148-4e2c-4e9a-b046-6c082ad3af14">
+          <AttributeID>城市热度</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="2fd69c01-98d2-476d-8e0a-dfb9e035303b">
+          <AttributeID>排序</AttributeID>
+          <AttributeHierarchyEnabled>false</AttributeHierarchyEnabled>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="021f4167-88b7-4963-91d3-64b4905a7349">
+      <ID>需求维度</ID>
+      <Name>需求维度</Name>
+      <DimensionID>需求维度</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="7522f521-41fb-4d60-839e-3e07eeffe132">
+          <AttributeID>需求</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="60482959-83b1-46c8-b983-68907bf16b13">
+          <AttributeID>教育背景</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e1bfbc6a-f486-400b-8dc2-1b486d42cf4e">
+          <AttributeID>工作经验</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="59c19b2f-187f-44f4-855c-52b9b0b13687">
+          <HierarchyID>层次结构</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="76457b44-2d8d-40b6-967d-c137e225d4e1">
+      <ID>工种维度</ID>
+      <Name>工种维度</Name>
+      <DimensionID>工种维度</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="2da83621-0563-4b89-a9fd-83524fee9852">
+          <AttributeID>工种</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="8b7536fc-c888-4729-8477-fce892175e67">
+          <AttributeID>一类工种</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="1f1dc763-9ac9-4d4d-936c-68ce28b8821a">
+          <AttributeID>二类工种</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="97e25168-99f4-4b14-9274-2b801bf68a62">
+          <HierarchyID>层次结构</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="6f4a7711-ce93-48e5-a648-c09913261c1b">
+      <ID>招聘数据</ID>
+      <Name>智联数据</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="44b9ea05-1098-408a-95f7-a29b75be163a">
+          <ID>索引页</ID>
+          <Name>索引页</Name>
+          <AggregateFunction>None</AggregateFunction>
+          <Source dwd:design-time-name="6f3791ad-41be-40e3-b9a4-9f64d57e9994">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="82924d3f-dca6-467d-ab40-5f471aae26c6">
+              <TableID>dbo_FactData</TableID>
+              <ColumnID>page_num</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="960aac9f-d3e1-4195-aa62-45764e3cdb6c">
+          <ID>索引值</ID>
+          <Name>索引值</Name>
+          <AggregateFunction>None</AggregateFunction>
+          <Source dwd:design-time-name="31156745-fdef-45a6-bf09-d2ba77a7c673">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="67d11693-2bb1-4747-80e2-d0921137ceed">
+              <TableID>dbo_FactData</TableID>
+              <ColumnID>index_num</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="7a6f3fbb-ce86-4c1a-9e57-2403caec7b50">
+          <ID>工资下限</ID>
+          <Name>工资下限</Name>
+          <AggregateFunction>Min</AggregateFunction>
+          <Source dwd:design-time-name="d72a4a5f-6ca0-4cf5-8699-1da203510385">
+            <DataType>BigInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="bacba1d6-aad3-4d51-90d6-05b361d39da4">
+              <TableID>dbo_FactData</TableID>
+              <ColumnID>MinSalaryNum</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="ecf9e272-e3aa-4cf8-925c-17888a122a81">
+          <ID>工资上限</ID>
+          <Name>工资上限</Name>
+          <AggregateFunction>Max</AggregateFunction>
+          <Source dwd:design-time-name="2d1f51ef-3ff3-4096-b3a7-880c83efe1e1">
+            <DataType>BigInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="1c816221-9436-4849-8746-0d58802b15df">
+              <TableID>dbo_FactData</TableID>
+              <ColumnID>MaxSalaryNum</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="ff081dde-8f80-4701-ae20-d7d86cb89449">
+          <ID>招聘数据 计数</ID>
+          <Name>招聘数据计数</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="5596aaa5-8343-4942-a208-84a112dfdcbb">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="30246ce8-633d-4e17-9183-00ee6a44be45">
+              <TableID>dbo_FactData</TableID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="fbe47215-7b37-472f-954a-6eb69e4a5d93">
+          <ID>Max Salary Num</ID>
+          <Name>上限工资总和</Name>
+          <Source dwd:design-time-name="d6f39dcf-145b-495f-81ae-dd7514c11f3b">
+            <DataType>BigInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="c49af884-9e64-4263-9721-ce1e75a448d8">
+              <TableID>dbo_FactData</TableID>
+              <ColumnID>MaxSalaryNum</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="f6e12e63-8025-4c36-8539-828d9dde53bc">
+          <ID>Min Salary Num</ID>
+          <Name>下限工资总和</Name>
+          <Source dwd:design-time-name="35bc0e86-7ca2-4c6c-a145-3e74155b7bbe">
+            <DataType>BigInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="5b8b443c-929f-455c-9fdd-d050733e6c6a">
+              <TableID>dbo_FactData</TableID>
+              <ColumnID>MinSalaryNum</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <EstimatedRows>869681</EstimatedRows>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="50c381f0-1d02-4db9-a4d2-7cacead0877f">
+          <CubeDimensionID>Crawl Date</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="6b778366-9a0f-4aea-a903-00c7b99a8b20">
+              <AttributeID>Datetime</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="27be5271-832d-49e6-8903-3a2b94a14ed4">
+                  <DataType>Date</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="d8bb5a24-a2d7-49d6-9a97-25910758de21">
+                    <TableID>dbo_FactData</TableID>
+                    <ColumnID>crawl_date</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="23765a76-6ce4-487a-808b-d195e7decfc9">
+          <CubeDimensionID>企业维度</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="0a2c2a6f-f3c8-43bd-bbaa-f383ba2d2b20">
+              <AttributeID>企业名称</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="9ead644e-a61d-4a0b-8d5a-9621abab3d44">
+                  <DataType>WChar</DataType>
+                  <DataSize>150</DataSize>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="9595e3fa-46a7-49e0-ad30-8998ed261535">
+                    <TableID>dbo_FactData</TableID>
+                    <ColumnID>company_name</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="516aa767-68c1-4ecd-99fd-e7fba42c3d53">
+          <CubeDimensionID>Issuer Date</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="321d28db-6cd4-4311-bc9e-6e7ab7a3b266">
+              <AttributeID>Datetime</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="4151f0f9-372c-41f9-bdaf-a0b3e393caec">
+                  <DataType>Date</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="bba7b04d-0b11-494d-a768-fbb17d15e85a">
+                    <TableID>dbo_FactData</TableID>
+                    <ColumnID>issuer_date</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="29d8179b-92bd-4fad-a933-65a3bdb745a3">
+          <CubeDimensionID>城市维度</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="86803770-2117-4058-b2dd-3aabfb0110e0">
+              <AttributeID>城市</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="8fb115a9-043f-4ba7-bb55-67e6c03eb64b">
+                  <DataType>WChar</DataType>
+                  <DataSize>260</DataSize>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="b4bea007-3c92-4542-90b1-af6d06fc5428">
+                    <TableID>dbo_FactData</TableID>
+                    <ColumnID>company_address</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="3e2fc371-ed5e-49d6-9bf3-9c217d04e3d9">
+          <CubeDimensionID>需求维度</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="a4254823-d27a-4613-a1b0-b573358d0ac4">
+              <AttributeID>需求</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="6736684c-e36d-41b5-bb8b-d92ce097ac76">
+                  <DataType>WChar</DataType>
+                  <DataSize>16</DataSize>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="2d7f80b9-31a1-4f1e-b194-edece1a62ed8">
+                    <TableID>dbo_FactData</TableID>
+                    <ColumnID>RequireKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="a26a9148-ed92-42dd-bb80-634cdcf5ed9b">
+          <CubeDimensionID>工种维度</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="4ae0ce08-ea32-4abb-899e-7a482b199e97">
+              <AttributeID>工种</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="876edf01-10e9-4e98-8604-cc90e64f1ab2">
+                  <DataType>WChar</DataType>
+                  <DataSize>111</DataSize>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="f1c5b735-25c4-4340-8edf-a56934b65fc9">
+                    <TableID>dbo_FactData</TableID>
+                    <ColumnID>full_title</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+      <AggregationDesigns />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="80a93492-13b2-4b30-b883-de928702a667">
+      <ID>智联数据</ID>
+      <Name>企业</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="3f92cc55-f9c5-4312-9542-2843b1508628">
+          <ID>Company Name 非重复计数</ID>
+          <Name>企业数</Name>
+          <AggregateFunction>DistinctCount</AggregateFunction>
+          <DataType>Integer</DataType>
+          <Source dwd:design-time-name="03556f07-cb05-4ad5-af64-3416430163d7">
+            <DataType>WChar</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="83957d98-102f-498e-9022-d70dcafc6abc">
+              <TableID>dbo_FactData</TableID>
+              <ColumnID>company_name</ColumnID>
+            </Source>
+          </Source>
+          <FormatString>#,#</FormatString>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <EstimatedRows>869681</EstimatedRows>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="630e8b02-93e6-4a0a-ae0c-ac64938460e0">
+          <CubeDimensionID>Crawl Date</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="c5c2bde2-cfd6-4293-807f-62d1f4cd3deb">
+              <AttributeID>Datetime</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="b704c41d-55af-4665-b845-1d0ab8440388">
+                  <DataType>Date</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="345e9d2f-39b2-48e2-a996-ef5ef8463480">
+                    <TableID>dbo_FactData</TableID>
+                    <ColumnID>crawl_date</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="6d8a9aa5-088a-4baa-89a9-d57cd6988ad0">
+          <CubeDimensionID>企业维度</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="59947188-5568-4ecd-a72c-9b61b2a43dd2">
+              <AttributeID>企业名称</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="9c1210e5-6be6-4ccc-a5d7-bbb8cb4fd64a">
+                  <DataType>WChar</DataType>
+                  <DataSize>150</DataSize>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="2ed427e3-436f-4e6b-97a2-7fa1814f609e">
+                    <TableID>dbo_FactData</TableID>
+                    <ColumnID>company_name</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="2f44d24c-3fd7-44d6-ab6f-33fea6523e4d">
+          <CubeDimensionID>Issuer Date</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="ff9c721e-78d4-420e-8fcc-473089f77b90">
+              <AttributeID>Datetime</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="7a41671b-53ee-4ca5-a3f7-845e47d8ca64">
+                  <DataType>Date</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="ed87db32-3e06-4bb6-a877-8dd59e04be1c">
+                    <TableID>dbo_FactData</TableID>
+                    <ColumnID>issuer_date</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="043d5344-2ce1-4da2-a3dd-b6378e27e4cc">
+          <CubeDimensionID>城市维度</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="e569403c-cd04-484b-bbe6-4e823f56672a">
+              <AttributeID>城市</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="f2fca021-6ba5-4ce0-b8c5-93bc913984df">
+                  <DataType>WChar</DataType>
+                  <DataSize>260</DataSize>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="701b6bab-11fd-4e61-af48-b1346292ac40">
+                    <TableID>dbo_FactData</TableID>
+                    <ColumnID>company_address</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="31d8b7bf-0a5b-45db-9083-af71c52421ad">
+          <CubeDimensionID>需求维度</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="890e603c-e907-4267-8152-e43b1d0fe73d">
+              <AttributeID>需求</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="f19933a5-9202-4941-9595-805d7bf7dcd7">
+                  <DataType>WChar</DataType>
+                  <DataSize>16</DataSize>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="0283f52e-f31c-4ba2-bb6c-085c95e3a9c7">
+                    <TableID>dbo_FactData</TableID>
+                    <ColumnID>RequireKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="5a31c8c6-80c5-4a64-8062-8a03c7746c2c">
+          <CubeDimensionID>工种维度</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="727e7ff4-4a0a-4549-8631-c92c2a3591ac">
+              <AttributeID>工种</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="28cbddc7-0544-4e93-bcde-04ca37eee5c6">
+                  <DataType>WChar</DataType>
+                  <DataSize>111</DataSize>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="98ccd6bd-9575-4b7e-a256-fa26f5da3653">
+                    <TableID>dbo_FactData</TableID>
+                    <ColumnID>full_title</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+      <AggregationDesigns />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="30e146b0-c75a-49ff-a38c-4f4f68c1b260">
+    <DataSourceViewID>Zhaopin Spider Data Dw</DataSourceViewID>
+  </Source>
+  <MdxScripts>
+    <MdxScript dwd:design-time-name="da962372-e793-4359-a209-986d499f6382">
+      <ID>MdxScript</ID>
+      <Name>MdxScript</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <Commands>
+        <Command>
+          <Text>/*
+CALCULATE 命令控制多维数据集中叶单元的聚合。
+如果删除或修改该 CALCULATE 命令，会影响该多维数据集内的数据。
+仅应在手动指定多维数据集的聚合方式后编辑此命令。
+*/
+CALCULATE;     
+CREATE MEMBER CURRENTCUBE.[Measures].[最高工资平均值]
+ AS [Measures].[上限工资总和] / [Measures].[招聘数据计数], 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = '智联数据';    
+CREATE MEMBER CURRENTCUBE.[Measures].[最低工资平均值]
+ AS [Measures].[下限工资总和] / [Measures].[招聘数据计数], 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = '智联数据';    
+CREATE MEMBER CURRENTCUBE.[Measures].[工种需求百分比]
+ AS ([Measures].[招聘数据计数]) / ([Measures].[招聘数据计数],[工种维度].[工种层次].[All]), 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = '智联数据';    
+CREATE MEMBER CURRENTCUBE.[Measures].[工种父级百分比]
+ AS ([Measures].[招聘数据计数]) / ([Measures].[招聘数据计数],[工种维度].[工种层次].CurrentMember.Parent), 
+FORMAT_STRING = "Percent", 
+NON_EMPTY_BEHAVIOR = {[Measures].[招聘数据计数]}, 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = '智联数据'  ; </Text>
+        </Command>
+      </Commands>
+    </MdxScript>
+  </MdxScripts>
+</Cube>

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="localhost.ZhaopinSpiderDataDw"
+  DTS:DTSID="{091ADE31-0DEC-4A93-B9AF-8FD2F1485793}"
+  DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=localhost;Initial Catalog=ZhaopinSpiderDataDw;Integrated Security=True;Application Name=SSIS-ETLSpiderData-{091ADE31-0DEC-4A93-B9AF-8FD2F1485793}localhost.ZhaopinSpiderDataDw;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

@@ -1,0 +1,383 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/25/2018 6:41:47 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-V3KCCRU"
+  DTS:CreatorName="DESKTOP-V3KCCRU\NEO"
+  DTS:DTSID="{ADD22974-96E0-49DD-989D-610C86F0F135}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3008.28"
+  DTS:LocaleID="2052"
+  DTS:ObjectName="BuildRequire"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{9A52F579-7D90-46F7-934E-2C4AAF9D40B6}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\GetRequireData"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="数据流任务"
+      DTS:DTSID="{03F88BDD-066B-4AF2-9329-EE2333EC204E}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GetRequireData"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\GetRequireData\DimRequire"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="将数据加载到使用数据库表或视图的符合 ADO.NET 的数据库中。将数据加载到新表或现有表中。例如，使用适用于 ODBC 的 ADO.NET 访问接口将数据加载到 ODBC 目标中。;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; 保留所有权利; http://www.microsoft.com/sql/support;2"
+              description="将数据加载到使用数据库表或视图的符合 ADO.NET 的数据库中。将数据加载到新表或现有表中。例如，使用适用于 ODBC 的 ADO.NET 访问接口将数据加载到 ODBC 目标中。"
+              name="DimRequire"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="目标数据库表名。"
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"DimRequire"</property>
+                <property
+                  dataType="System.Int32"
+                  description="指定每批的行数。默认值为 0，即使用与 SSIS 内部缓冲区相同的大小。 "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="命令超时前等待的时间(秒)。值为 0，表示无限期等待。 "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="指定是否使用 SqlBulkCopy 接口来改进大容量插入操作的性能。只有某些特定提供程序支持此接口。"
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\GetRequireData\DimRequire.Connections[IDbConnection]"
+                  connectionManagerID="{091ADE31-0DEC-4A93-B9AF-8FD2F1485793}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.ZhaopinSpiderDataDw]"
+                  description="托管连接管理器"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\GetRequireData\DimRequire.Inputs[ADO NET 目标输入]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ADO NET 目标输入">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\GetRequireData\DimRequire.Inputs[ADO NET 目标输入].Columns[education_background]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="education_background"
+                      externalMetadataColumnId="Package\GetRequireData\DimRequire.Inputs[ADO NET 目标输入].ExternalColumns[education_background]"
+                      lineageId="Package\GetRequireData\GetRequireData.Outputs[ADO NET 源输出].Columns[education_background]" />
+                    <inputColumn
+                      refId="Package\GetRequireData\DimRequire.Inputs[ADO NET 目标输入].Columns[work_experience]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="work_experience"
+                      externalMetadataColumnId="Package\GetRequireData\DimRequire.Inputs[ADO NET 目标输入].ExternalColumns[work_experience]"
+                      lineageId="Package\GetRequireData\GetRequireData.Outputs[ADO NET 源输出].Columns[work_experience]" />
+                    <inputColumn
+                      refId="Package\GetRequireData\DimRequire.Inputs[ADO NET 目标输入].Columns[RequireKey]"
+                      cachedDataType="wstr"
+                      cachedLength="16"
+                      cachedName="RequireKey"
+                      externalMetadataColumnId="Package\GetRequireData\DimRequire.Inputs[ADO NET 目标输入].ExternalColumns[RequireKey]"
+                      lineageId="Package\GetRequireData\GetRequireData.Outputs[ADO NET 源输出].Columns[RequireKey]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\GetRequireData\DimRequire.Inputs[ADO NET 目标输入].ExternalColumns[education_background]"
+                      dataType="wstr"
+                      length="50"
+                      name="education_background" />
+                    <externalMetadataColumn
+                      refId="Package\GetRequireData\DimRequire.Inputs[ADO NET 目标输入].ExternalColumns[work_experience]"
+                      dataType="wstr"
+                      length="50"
+                      name="work_experience" />
+                    <externalMetadataColumn
+                      refId="Package\GetRequireData\DimRequire.Inputs[ADO NET 目标输入].ExternalColumns[RequireKey]"
+                      dataType="wstr"
+                      length="16"
+                      name="RequireKey" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\GetRequireData\DimRequire.Outputs[ADO NET 目标错误输出]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ADO NET 目标错误输出"
+                  synchronousInputId="Package\GetRequireData\DimRequire.Inputs[ADO NET 目标输入]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\GetRequireData\DimRequire.Outputs[ADO NET 目标错误输出].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\GetRequireData\DimRequire.Outputs[ADO NET 目标错误输出].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\GetRequireData\DimRequire.Outputs[ADO NET 目标错误输出].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\GetRequireData\DimRequire.Outputs[ADO NET 目标错误输出].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\GetRequireData\GetRequireData"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="通过使用相应的 .NET Framework 数据访问接口来使用 SQL Server、OLE DB、ODBC 或 Oracle 中的数据。使用 Transact-SQL 语句定义结果集。例如，使用适用于 SQL Server 的 .NET Framework 数据访问接口从 SQL Server 中提取数据。;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; 保留所有权利; http://www.microsoft.com/sql/support;4"
+              description="通过使用相应的 .NET Framework 数据访问接口来使用 SQL Server、OLE DB、ODBC 或 Oracle 中的数据。使用 Transact-SQL 语句定义结果集。例如，使用适用于 SQL Server 的 .NET Framework 数据访问接口从 SQL Server 中提取数据。"
+              name="GetRequireData"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="指定组件用来提取数据的 SQL 语句。"
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DISTINCT 
+	education_background,
+	work_experience,
+    --SUBSTRING(education_background,CHARINDEX(':',education_background)+1,8) as education_background,
+	--SUBSTRING(work_experience,CHARINDEX(':',work_experience)+1,8) as work_experience,
+	SUBSTRING(education_background,CHARINDEX(':',education_background)+1,8) + SUBSTRING(work_experience,CHARINDEX(':',work_experience)+1,8) AS RequireKey
+  FROM [ZhaopinSpiderData].[dbo].[JobInformation]</property>
+                <property
+                  dataType="System.Int32"
+                  description="命令超时前等待的时间(秒)。值为 0，表示无限期等待。"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="指示是否允许非字符串外部列隐式地转换为输出列中的字符串。"
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="源数据库表名。"
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="指定检索外部列信息的模式"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\GetRequireData\GetRequireData.Connections[IDbConnection]"
+                  connectionManagerID="{A81BC240-E138-4117-8489-A2497DE91F1F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.ZhaopinSpiderData]"
+                  description="托管连接管理器"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\GetRequireData\GetRequireData.Outputs[ADO NET 源输出]"
+                  name="ADO NET 源输出">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\GetRequireData\GetRequireData.Outputs[ADO NET 源输出].Columns[education_background]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetRequireData\GetRequireData.Outputs[ADO NET 源输出].ExternalColumns[education_background]"
+                      length="50"
+                      lineageId="Package\GetRequireData\GetRequireData.Outputs[ADO NET 源输出].Columns[education_background]"
+                      name="education_background"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetRequireData\GetRequireData.Outputs[ADO NET 源输出].Columns[work_experience]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetRequireData\GetRequireData.Outputs[ADO NET 源输出].ExternalColumns[work_experience]"
+                      length="50"
+                      lineageId="Package\GetRequireData\GetRequireData.Outputs[ADO NET 源输出].Columns[work_experience]"
+                      name="work_experience"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\GetRequireData\GetRequireData.Outputs[ADO NET 源输出].Columns[RequireKey]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\GetRequireData\GetRequireData.Outputs[ADO NET 源输出].ExternalColumns[RequireKey]"
+                      length="16"
+                      lineageId="Package\GetRequireData\GetRequireData.Outputs[ADO NET 源输出].Columns[RequireKey]"
+                      name="RequireKey"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\GetRequireData\GetRequireData.Outputs[ADO NET 源输出].ExternalColumns[education_background]"
+                      dataType="wstr"
+                      length="50"
+                      name="education_background" />
+                    <externalMetadataColumn
+                      refId="Package\GetRequireData\GetRequireData.Outputs[ADO NET 源输出].ExternalColumns[work_experience]"
+                      dataType="wstr"
+                      length="50"
+                      name="work_experience" />
+                    <externalMetadataColumn
+                      refId="Package\GetRequireData\GetRequireData.Outputs[ADO NET 源输出].ExternalColumns[RequireKey]"
+                      dataType="wstr"
+                      length="16"
+                      name="RequireKey" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\GetRequireData\GetRequireData.Outputs[ADO NET 源错误输出]"
+                  isErrorOut="true"
+                  name="ADO NET 源错误输出">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\GetRequireData\GetRequireData.Outputs[ADO NET 源错误输出].Columns[education_background]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\GetRequireData\GetRequireData.Outputs[ADO NET 源错误输出].Columns[education_background]"
+                      name="education_background" />
+                    <outputColumn
+                      refId="Package\GetRequireData\GetRequireData.Outputs[ADO NET 源错误输出].Columns[work_experience]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\GetRequireData\GetRequireData.Outputs[ADO NET 源错误输出].Columns[work_experience]"
+                      name="work_experience" />
+                    <outputColumn
+                      refId="Package\GetRequireData\GetRequireData.Outputs[ADO NET 源错误输出].Columns[RequireKey]"
+                      dataType="wstr"
+                      length="16"
+                      lineageId="Package\GetRequireData\GetRequireData.Outputs[ADO NET 源错误输出].Columns[RequireKey]"
+                      name="RequireKey" />
+                    <outputColumn
+                      refId="Package\GetRequireData\GetRequireData.Outputs[ADO NET 源错误输出].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\GetRequireData\GetRequireData.Outputs[ADO NET 源错误输出].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\GetRequireData\GetRequireData.Outputs[ADO NET 源错误输出].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\GetRequireData\GetRequireData.Outputs[ADO NET 源错误输出].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\GetRequireData.Paths[ADO NET 源输出]"
+              endId="Package\GetRequireData\DimRequire.Inputs[ADO NET 目标输入]"
+              name="ADO NET 源输出"
+              startId="Package\GetRequireData\GetRequireData.Outputs[ADO NET 源输出]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--此 CDATA 部分包含包的布局信息。该部分包括(x,y)坐标、宽度和高度之类的信息。-->
+<!--如果您手动编辑此部分并且出错，则可以删除此部分。 -->
+<!--该包仍将能够正常加载，但以前的布局信息将丢失，并且设计器将自动在设计图面上重新排列这些元素。-->
+<Objects
+  Version="8">
+  <!--下面的每个节点都将包含不会影响运行时行为的属性。-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="163,42"
+          Id="Package\GetRequireData"
+          TopLeft="248.333323465454,26.928570052799" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\GetRequireData">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="163,42"
+          Id="Package\GetRequireData\GetRequireData"
+          TopLeft="252.499989966552,19.499999003751" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\GetRequireData\DimRequire"
+          TopLeft="262.499989569188,140.214278550781" />
+        <EdgeLayout
+          Id="Package\GetRequireData.Paths[ADO NET 源输出]"
+          TopLeft="332.99998976787,61.499999003751">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,78.7142795470299"
+              Start="0,0"
+              End="0,71.2142795470299">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,71.2142795470299" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\GetRequireData\GetRequireData">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\GetRequireData\DimRequire">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,3857 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="aca7447f-8a18-4f60-ad1e-7661982df535" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>智联数据集</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>招聘数据</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="af108a26-22e7-4198-89d5-bc4227b2dd24">
+          <ID>招聘数据</ID>
+          <Name>招聘数据</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="88b14e80-90d8-4d8e-abca-cafca9a3e83b">
+            <DataSourceViewID>Zhaopin Spider Data Dw</DataSourceViewID>
+            <TableID>dbo_FactData</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <EstimatedRows>869681</EstimatedRows>
+          <AggregationDesignID>AggregationDesign</AggregationDesignID>
+        </Partition>
+      </Partitions>
+      <AggregationDesigns>
+        <AggregationDesign>
+          <ID>AggregationDesign</ID>
+          <Name>AggregationDesign</Name>
+          <CreatedTimestamp>2018-03-09T09:37:04.09Z</CreatedTimestamp>
+          <LastSchemaUpdate>2018-03-09T09:37:04.09Z</LastSchemaUpdate>
+          <EstimatedRows>869681</EstimatedRows>
+          <Dimensions>
+            <Dimension>
+              <CubeDimensionID>Crawl Date</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Datetime</AttributeID>
+                  <EstimatedCount>1461</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>D Year</AttributeID>
+                  <EstimatedCount>4</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Quaters Name</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Months Name</AttributeID>
+                  <EstimatedCount>48</EstimatedCount>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>企业维度</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>企业名称</AttributeID>
+                  <EstimatedCount>81676</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>企业类型</AttributeID>
+                  <EstimatedCount>17</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>企业规模</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>需求热度</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>排序</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Issuer Date</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Datetime</AttributeID>
+                  <EstimatedCount>1461</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>D Year</AttributeID>
+                  <EstimatedCount>4</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Quaters Name</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Months Name</AttributeID>
+                  <EstimatedCount>48</EstimatedCount>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>城市维度</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>城市</AttributeID>
+                  <EstimatedCount>424</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>城市热度</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>排序</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>需求维度</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>需求</AttributeID>
+                  <EstimatedCount>57</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>教育背景</AttributeID>
+                  <EstimatedCount>9</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>工作经验</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>工种维度</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>工种</AttributeID>
+                  <EstimatedCount>119</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>一类工种</AttributeID>
+                  <EstimatedCount>6</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>二类工种</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Aggregations>
+            <Aggregation>
+              <ID>Aggregation 0</ID>
+              <Name>Aggregation 0</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>企业类型</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>一类工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1</ID>
+              <Name>Aggregation 1</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>需求</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>一类工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2</ID>
+              <Name>Aggregation 2</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 3</ID>
+              <Name>Aggregation 3</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>企业类型</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>教育背景</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 4</ID>
+              <Name>Aggregation 4</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Months Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>企业类型</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 5</ID>
+              <Name>Aggregation 5</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>企业类型</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Months Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 6</ID>
+              <Name>Aggregation 6</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>企业类型</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>教育背景</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>一类工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 7</ID>
+              <Name>Aggregation 7</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>企业类型</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>教育背景</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>一类工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 8</ID>
+              <Name>Aggregation 8</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>城市</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>教育背景</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 9</ID>
+              <Name>Aggregation 9</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>企业类型</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>需求</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation a</ID>
+              <Name>Aggregation a</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>企业类型</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>需求</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation b</ID>
+              <Name>Aggregation b</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>教育背景</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation c</ID>
+              <Name>Aggregation c</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>教育背景</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation d</ID>
+              <Name>Aggregation d</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Months Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>企业类型</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>一类工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation e</ID>
+              <Name>Aggregation e</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>企业类型</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Months Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>一类工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation f</ID>
+              <Name>Aggregation f</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Months Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>教育背景</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>一类工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 10</ID>
+              <Name>Aggregation 10</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Months Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>教育背景</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>一类工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 11</ID>
+              <Name>Aggregation 11</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Months Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>需求</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 12</ID>
+              <Name>Aggregation 12</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Months Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>需求</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 13</ID>
+              <Name>Aggregation 13</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Months Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 14</ID>
+              <Name>Aggregation 14</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Months Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 15</ID>
+              <Name>Aggregation 15</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>企业类型</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>需求</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>一类工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 16</ID>
+              <Name>Aggregation 16</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Datetime</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 17</ID>
+              <Name>Aggregation 17</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Datetime</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 18</ID>
+              <Name>Aggregation 18</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>城市</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 19</ID>
+              <Name>Aggregation 19</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>需求</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1a</ID>
+              <Name>Aggregation 1a</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Months Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Months Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>一类工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1b</ID>
+              <Name>Aggregation 1b</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>企业类型</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>城市</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1c</ID>
+              <Name>Aggregation 1c</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Months Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>企业类型</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>教育背景</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1d</ID>
+              <Name>Aggregation 1d</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>企业类型</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Months Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>教育背景</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1e</ID>
+              <Name>Aggregation 1e</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>企业类型</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1f</ID>
+              <Name>Aggregation 1f</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>企业类型</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 20</ID>
+              <Name>Aggregation 20</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 21</ID>
+              <Name>Aggregation 21</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Datetime</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>一类工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 22</ID>
+              <Name>Aggregation 22</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Datetime</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>一类工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 23</ID>
+              <Name>Aggregation 23</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>企业类型</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 24</ID>
+              <Name>Aggregation 24</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>城市</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>一类工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 25</ID>
+              <Name>Aggregation 25</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>城市</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>一类工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 26</ID>
+              <Name>Aggregation 26</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>需求</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 27</ID>
+              <Name>Aggregation 27</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>教育背景</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>一类工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 28</ID>
+              <Name>Aggregation 28</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>一类工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 29</ID>
+              <Name>Aggregation 29</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>教育背景</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2a</ID>
+              <Name>Aggregation 2a</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Months Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2b</ID>
+              <Name>Aggregation 2b</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>一类工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2c</ID>
+              <Name>Aggregation 2c</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>教育背景</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2d</ID>
+              <Name>Aggregation 2d</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Months Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2e</ID>
+              <Name>Aggregation 2e</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Datetime</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>教育背景</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2f</ID>
+              <Name>Aggregation 2f</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Datetime</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>教育背景</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+          </Aggregations>
+        </AggregationDesign>
+      </AggregationDesigns>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>智联数据</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="b1ce496f-1f20-4e4d-a746-f5ddcff24ab2">
+          <ID>招聘数据</ID>
+          <Name>招聘数据</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="5afc3eae-6da7-4a12-addf-c7ef56b5fa4d">
+            <DataSourceViewID>Zhaopin Spider Data Dw</DataSourceViewID>
+            <TableID>dbo_FactData</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <EstimatedRows>869681</EstimatedRows>
+          <AggregationDesignID>AggregationDesign</AggregationDesignID>
+        </Partition>
+      </Partitions>
+      <AggregationDesigns>
+        <AggregationDesign>
+          <ID>AggregationDesign</ID>
+          <Name>AggregationDesign</Name>
+          <CreatedTimestamp>2018-03-09T09:37:04.09Z</CreatedTimestamp>
+          <LastSchemaUpdate>2018-03-09T09:37:04.09Z</LastSchemaUpdate>
+          <EstimatedRows>869681</EstimatedRows>
+          <Dimensions>
+            <Dimension>
+              <CubeDimensionID>Crawl Date</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Datetime</AttributeID>
+                  <EstimatedCount>1461</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>D Year</AttributeID>
+                  <EstimatedCount>4</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Quaters Name</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Months Name</AttributeID>
+                  <EstimatedCount>48</EstimatedCount>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>企业维度</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>企业名称</AttributeID>
+                  <EstimatedCount>81676</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>企业类型</AttributeID>
+                  <EstimatedCount>17</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>企业规模</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>需求热度</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>排序</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>Issuer Date</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Datetime</AttributeID>
+                  <EstimatedCount>1461</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>D Year</AttributeID>
+                  <EstimatedCount>4</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Quaters Name</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Months Name</AttributeID>
+                  <EstimatedCount>48</EstimatedCount>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>城市维度</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>城市</AttributeID>
+                  <EstimatedCount>424</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>城市热度</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>排序</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>需求维度</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>需求</AttributeID>
+                  <EstimatedCount>57</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>教育背景</AttributeID>
+                  <EstimatedCount>9</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>工作经验</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <CubeDimensionID>工种维度</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>工种</AttributeID>
+                  <EstimatedCount>119</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>一类工种</AttributeID>
+                  <EstimatedCount>6</EstimatedCount>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>二类工种</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Aggregations>
+            <Aggregation>
+              <ID>Aggregation 0</ID>
+              <Name>Aggregation 0</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>企业类型</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>一类工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1</ID>
+              <Name>Aggregation 1</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>需求</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>一类工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2</ID>
+              <Name>Aggregation 2</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 3</ID>
+              <Name>Aggregation 3</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>企业类型</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>教育背景</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 4</ID>
+              <Name>Aggregation 4</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Months Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>企业类型</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 5</ID>
+              <Name>Aggregation 5</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>企业类型</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Months Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 6</ID>
+              <Name>Aggregation 6</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>企业类型</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>教育背景</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>一类工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 7</ID>
+              <Name>Aggregation 7</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>企业类型</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>教育背景</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>一类工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 8</ID>
+              <Name>Aggregation 8</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>城市</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>教育背景</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 9</ID>
+              <Name>Aggregation 9</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>企业类型</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>需求</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation a</ID>
+              <Name>Aggregation a</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>企业类型</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>需求</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation b</ID>
+              <Name>Aggregation b</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>教育背景</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation c</ID>
+              <Name>Aggregation c</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>教育背景</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation d</ID>
+              <Name>Aggregation d</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Months Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>企业类型</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>一类工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation e</ID>
+              <Name>Aggregation e</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>企业类型</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Months Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>一类工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation f</ID>
+              <Name>Aggregation f</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Months Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>教育背景</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>一类工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 10</ID>
+              <Name>Aggregation 10</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Months Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>教育背景</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>一类工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 11</ID>
+              <Name>Aggregation 11</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Months Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>需求</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 12</ID>
+              <Name>Aggregation 12</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Months Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>需求</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 13</ID>
+              <Name>Aggregation 13</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Months Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 14</ID>
+              <Name>Aggregation 14</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Months Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 15</ID>
+              <Name>Aggregation 15</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>企业类型</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>需求</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>一类工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 16</ID>
+              <Name>Aggregation 16</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Datetime</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 17</ID>
+              <Name>Aggregation 17</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Datetime</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 18</ID>
+              <Name>Aggregation 18</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>城市</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 19</ID>
+              <Name>Aggregation 19</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>需求</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1a</ID>
+              <Name>Aggregation 1a</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Months Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Months Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>一类工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1b</ID>
+              <Name>Aggregation 1b</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>企业类型</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>城市</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1c</ID>
+              <Name>Aggregation 1c</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Months Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>企业类型</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>教育背景</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1d</ID>
+              <Name>Aggregation 1d</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>企业类型</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Months Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>教育背景</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1e</ID>
+              <Name>Aggregation 1e</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>企业类型</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 1f</ID>
+              <Name>Aggregation 1f</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>企业类型</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 20</ID>
+              <Name>Aggregation 20</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 21</ID>
+              <Name>Aggregation 21</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Datetime</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>一类工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 22</ID>
+              <Name>Aggregation 22</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Datetime</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>一类工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 23</ID>
+              <Name>Aggregation 23</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>企业类型</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 24</ID>
+              <Name>Aggregation 24</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>城市</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>一类工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 25</ID>
+              <Name>Aggregation 25</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>城市</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>一类工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 26</ID>
+              <Name>Aggregation 26</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>需求</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 27</ID>
+              <Name>Aggregation 27</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>教育背景</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>一类工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 28</ID>
+              <Name>Aggregation 28</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>一类工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 29</ID>
+              <Name>Aggregation 29</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>教育背景</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2a</ID>
+              <Name>Aggregation 2a</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Months Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2b</ID>
+              <Name>Aggregation 2b</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>一类工种</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2c</ID>
+              <Name>Aggregation 2c</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>D Year</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>教育背景</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2d</ID>
+              <Name>Aggregation 2d</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Months Name</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2e</ID>
+              <Name>Aggregation 2e</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Datetime</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>教育背景</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+            <Aggregation>
+              <ID>Aggregation 2f</ID>
+              <Name>Aggregation 2f</Name>
+              <Dimensions>
+                <Dimension>
+                  <CubeDimensionID>Crawl Date</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>企业维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>Issuer Date</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Datetime</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>城市维度</CubeDimensionID>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>需求维度</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>教育背景</AttributeID>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension>
+                  <CubeDimensionID>工种维度</CubeDimensionID>
+                </Dimension>
+              </Dimensions>
+            </Aggregation>
+          </Aggregations>
+        </AggregationDesign>
+      </AggregationDesigns>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>

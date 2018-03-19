@@ -1,0 +1,258 @@
+﻿<MiningStructure xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="dfc6dbc6-cab2-4705-b660-6fbbf3eb8699" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>企业需求决策树分析</ID>
+  <Name>企业需求决策树分析</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>MDXFilterComponent</Name>
+      <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/SQLServer/reporting/QuerySpecification"&gt;&lt;FilterItems xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition" /&gt;&lt;/Filter&gt;</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="CubeDimensionBinding" dwd:design-time-name="9faf4e92-0945-40d1-875d-7b65ac82593f">
+    <DataSourceID>.</DataSourceID>
+    <CubeID>ZhaopinCube</CubeID>
+    <CubeDimensionID>企业维度</CubeDimensionID>
+    <Filter></Filter>
+  </Source>
+  <Columns>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="a140030b-4b3e-4008-921b-1405d63fc367">
+      <ID>企业名称</ID>
+      <Name>企业名称</Name>
+      <IsKey>true</IsKey>
+      <Type>Text</Type>
+      <Source xsi:type="CubeAttributeBinding" dwd:design-time-name="0c286559-425c-4e36-aa7f-f20cbd6a5894">
+        <CubeID>ZhaopinCube</CubeID>
+        <CubeDimensionID>企业维度</CubeDimensionID>
+        <AttributeID>企业名称</AttributeID>
+        <Type>All</Type>
+      </Source>
+      <Content>Key</Content>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="d0203afd-da6f-4647-a77e-bf9adcb44d8d">
+      <ID>企业规模</ID>
+      <Name>企业规模</Name>
+      <Type>Text</Type>
+      <Source xsi:type="CubeAttributeBinding" dwd:design-time-name="6e7f0e37-e6a5-48ea-8a99-e471226a454d">
+        <CubeID>ZhaopinCube</CubeID>
+        <CubeDimensionID>企业维度</CubeDimensionID>
+        <AttributeID>企业规模</AttributeID>
+        <Type>All</Type>
+      </Source>
+      <Content>Discrete</Content>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="ab083bbf-44c1-459e-a392-d10e8f84d31f">
+      <ID>企业类型</ID>
+      <Name>企业类型</Name>
+      <Type>Text</Type>
+      <Source xsi:type="CubeAttributeBinding" dwd:design-time-name="6aa86637-1af5-48d8-9d83-bdb844a411b2">
+        <CubeID>ZhaopinCube</CubeID>
+        <CubeDimensionID>企业维度</CubeDimensionID>
+        <AttributeID>企业类型</AttributeID>
+        <Type>All</Type>
+      </Source>
+      <Content>Discrete</Content>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="50986eb2-1207-442d-b817-f8013c127174">
+      <ID>最低工资平均值</ID>
+      <Name>最低工资平均值</Name>
+      <Type>Double</Type>
+      <Source xsi:type="CalculatedMeasureBinding" dwd:design-time-name="74c2e478-5e76-4160-88c7-c86e18a520d5">
+        <MeasureName>[Measures].[最低工资平均值]</MeasureName>
+      </Source>
+      <Content>Continuous</Content>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="f075e064-7641-4396-94b2-619fb27921a7">
+      <ID>最高工资平均值</ID>
+      <Name>最高工资平均值</Name>
+      <Type>Double</Type>
+      <Source xsi:type="CalculatedMeasureBinding" dwd:design-time-name="bd390b90-a5b1-4208-807d-c08056f47b71">
+        <MeasureName>[Measures].[最高工资平均值]</MeasureName>
+      </Source>
+      <Content>Continuous</Content>
+    </Column>
+    <Column xsi:type="TableMiningStructureColumn" dwd:design-time-name="19369fd1-7b88-466e-be3c-699bb759a15e">
+      <Annotations>
+        <Annotation>
+          <Name>MDXFilterComponent</Name>
+          <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/SQLServer/reporting/QuerySpecification"&gt;&lt;FilterItems xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition" /&gt;&lt;/Filter&gt;</Value>
+        </Annotation>
+      </Annotations>
+      <ID>需求维度</ID>
+      <Name>需求维度</Name>
+      <SourceMeasureGroup dwd:design-time-name="846c12e9-b35b-473b-9dd4-d4b4b07eba08">
+        <DataSourceID>.</DataSourceID>
+        <CubeID>ZhaopinCube</CubeID>
+        <MeasureGroupID>智联数据</MeasureGroupID>
+        <RefreshInterval>PT1S</RefreshInterval>
+        <Filter></Filter>
+      </SourceMeasureGroup>
+      <Columns>
+        <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="9208e7ec-150d-419b-9d90-3c219959006a">
+          <ID>需求</ID>
+          <Name>需求</Name>
+          <IsKey>true</IsKey>
+          <Type>Text</Type>
+          <Source xsi:type="CubeAttributeBinding" dwd:design-time-name="b0f39330-319e-4204-b2fa-59dcabe619b2">
+            <CubeID>ZhaopinCube</CubeID>
+            <CubeDimensionID>需求维度</CubeDimensionID>
+            <AttributeID>需求</AttributeID>
+            <Type>All</Type>
+          </Source>
+          <Content>Key</Content>
+        </Column>
+        <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="7a8e18c9-8dae-4033-9f61-63c6e8198d02">
+          <ID>工作经验</ID>
+          <Name>工作经验</Name>
+          <Type>Text</Type>
+          <Source xsi:type="CubeAttributeBinding" dwd:design-time-name="4663ca85-ee42-402b-83c0-0f769e63835f">
+            <CubeID>ZhaopinCube</CubeID>
+            <CubeDimensionID>需求维度</CubeDimensionID>
+            <AttributeID>工作经验</AttributeID>
+            <Type>All</Type>
+          </Source>
+          <Content>Discrete</Content>
+        </Column>
+        <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="7e92f817-b131-4e2a-b235-3d923c1ea27a">
+          <ID>教育背景</ID>
+          <Name>教育背景</Name>
+          <Type>Text</Type>
+          <Source xsi:type="CubeAttributeBinding" dwd:design-time-name="30ca0d4e-8a9d-4ac9-acc9-714de7b27188">
+            <CubeID>ZhaopinCube</CubeID>
+            <CubeDimensionID>需求维度</CubeDimensionID>
+            <AttributeID>教育背景</AttributeID>
+            <Type>All</Type>
+          </Source>
+          <Content>Discrete</Content>
+        </Column>
+        <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="90eb4659-2398-4f6d-99df-e944946554e4">
+          <ID>最高工资平均值</ID>
+          <Name>最高工资平均值</Name>
+          <Type>Double</Type>
+          <Source xsi:type="CalculatedMeasureBinding" dwd:design-time-name="32308aa2-ec80-4536-a2f0-740169a2227a">
+            <MeasureName>[Measures].[最高工资平均值]</MeasureName>
+          </Source>
+          <Content>Continuous</Content>
+        </Column>
+        <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="ebecdbe6-6915-4233-91e6-f1bd1d4ebfbe">
+          <ID>最低工资平均值</ID>
+          <Name>最低工资平均值</Name>
+          <Type>Double</Type>
+          <Source xsi:type="CalculatedMeasureBinding" dwd:design-time-name="63d91761-299e-4b64-8237-6c0fdba0e1c3">
+            <MeasureName>[Measures].[最低工资平均值]</MeasureName>
+          </Source>
+          <Content>Continuous</Content>
+        </Column>
+      </Columns>
+    </Column>
+  </Columns>
+  <MiningModels>
+    <MiningModel dwd:design-time-name="e20548aa-ccb0-43ca-94f7-11d79fda4e6a">
+      <ID>企业需求决策树分析</ID>
+      <Name>企业需求决策树分析</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Algorithm>Microsoft_Decision_Trees</Algorithm>
+      <Columns>
+        <Column dwd:design-time-name="a400a602-c51b-40b9-be35-d4e66ff487fd">
+          <ID>企业名称</ID>
+          <Name>企业名称</Name>
+          <SourceColumnID>企业名称</SourceColumnID>
+          <Usage>Key</Usage>
+        </Column>
+        <Column dwd:design-time-name="2898adf5-bffe-459e-9df8-ab67579a0dc0">
+          <ID>企业规模</ID>
+          <Name>企业规模</Name>
+          <SourceColumnID>企业规模</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="5c7f969c-6ae9-4207-b1d1-843ad4ccc9de">
+          <ID>企业类型</ID>
+          <Name>企业类型</Name>
+          <SourceColumnID>企业类型</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="98d0c417-ab7f-4369-ba9f-a61c5f52a2b8">
+          <ID>最低工资平均值</ID>
+          <Name>最低工资平均值</Name>
+          <SourceColumnID>最低工资平均值</SourceColumnID>
+          <Usage>Predict</Usage>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="f9eb6c67-a66d-434d-995e-7ba527676b27">
+          <ID>最高工资平均值</ID>
+          <Name>最高工资平均值</Name>
+          <SourceColumnID>最高工资平均值</SourceColumnID>
+          <Usage>Predict</Usage>
+          <ModelingFlags>
+            <ModelingFlag>REGRESSOR</ModelingFlag>
+          </ModelingFlags>
+        </Column>
+        <Column dwd:design-time-name="89297e07-f738-4cf7-907a-dcb24f405273">
+          <ID>需求维度</ID>
+          <Name>需求维度</Name>
+          <SourceColumnID>需求维度</SourceColumnID>
+          <Columns>
+            <Column dwd:design-time-name="28636eef-b304-4931-af88-4c4f58dd9200">
+              <ID>需求</ID>
+              <Name>需求</Name>
+              <SourceColumnID>需求</SourceColumnID>
+              <Usage>Key</Usage>
+            </Column>
+            <Column dwd:design-time-name="e39e603b-cf3b-479f-b0c2-ab9b5df77bcc">
+              <ID>工作经验</ID>
+              <Name>工作经验</Name>
+              <SourceColumnID>工作经验</SourceColumnID>
+            </Column>
+            <Column dwd:design-time-name="fd2b86d7-095f-4385-a395-8ddbff3c3fbb">
+              <ID>教育背景</ID>
+              <Name>教育背景</Name>
+              <SourceColumnID>教育背景</SourceColumnID>
+            </Column>
+          </Columns>
+        </Column>
+      </Columns>
+      <AllowDrillThrough>true</AllowDrillThrough>
+    </MiningModel>
+  </MiningModels>
+  <ddl100_100:HoldoutMaxPercent>50</ddl100_100:HoldoutMaxPercent>
+</MiningStructure>

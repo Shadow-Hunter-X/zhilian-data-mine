@@ -1,0 +1,150 @@
+﻿<MiningStructure xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="1678d0bf-46ef-460f-a519-1e04a8095b3f" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>企业k-means聚类</ID>
+  <Name>企业k-means聚类</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>MDXFilterComponent</Name>
+      <Value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/SQLServer/reporting/QuerySpecification"&gt;&lt;FilterItems xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition" /&gt;&lt;/Filter&gt;</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="CubeDimensionBinding" dwd:design-time-name="24ec0dd1-2edf-440f-831f-48e0f5a7db2e">
+    <DataSourceID>.</DataSourceID>
+    <CubeID>ZhaopinCube</CubeID>
+    <CubeDimensionID>企业维度</CubeDimensionID>
+    <Filter></Filter>
+  </Source>
+  <Columns>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="6d8e8d0d-7eb7-46b6-b488-6f10ad559682">
+      <ID>企业名称</ID>
+      <Name>企业名称</Name>
+      <IsKey>true</IsKey>
+      <Type>Text</Type>
+      <Source xsi:type="CubeAttributeBinding" dwd:design-time-name="ff754012-89c0-40be-85e4-20a26a485eaa">
+        <CubeID>ZhaopinCube</CubeID>
+        <CubeDimensionID>企业维度</CubeDimensionID>
+        <AttributeID>企业名称</AttributeID>
+        <Type>All</Type>
+      </Source>
+      <Content>Key</Content>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="36bad4b1-0477-4be1-a692-c845c4560723">
+      <ID>需求热度</ID>
+      <Name>需求热度</Name>
+      <Type>Long</Type>
+      <Source xsi:type="CubeAttributeBinding" dwd:design-time-name="7a131a9e-3778-4f13-8b8e-142f6d82afb0">
+        <CubeID>ZhaopinCube</CubeID>
+        <CubeDimensionID>企业维度</CubeDimensionID>
+        <AttributeID>需求热度</AttributeID>
+        <Type>All</Type>
+      </Source>
+      <Content>Continuous</Content>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="6f560439-31ed-4526-b261-6dd660f7b527">
+      <ID>索引页</ID>
+      <Name>索引页</Name>
+      <Type>Long</Type>
+      <Source xsi:type="MeasureBinding" dwd:design-time-name="89c8fe0a-4fcd-4cb9-ab6c-96a2092dc9b1">
+        <MeasureID>索引页</MeasureID>
+      </Source>
+      <Content>Continuous</Content>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="247098b9-a553-4f18-95f9-8ecc9a69bc24">
+      <ID>索引值</ID>
+      <Name>索引值</Name>
+      <Type>Long</Type>
+      <Source xsi:type="MeasureBinding" dwd:design-time-name="d7f27757-3847-4212-b18c-6f262f2ba19c">
+        <MeasureID>索引值</MeasureID>
+      </Source>
+      <Content>Continuous</Content>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="d85619c1-ce90-4389-84ec-66861491c86f">
+      <ID>招聘数据计数</ID>
+      <Name>招聘数据计数</Name>
+      <Type>Long</Type>
+      <Source xsi:type="MeasureBinding" dwd:design-time-name="56b7e8af-7a20-40a4-be33-569e0758e326">
+        <MeasureID>招聘数据 计数</MeasureID>
+      </Source>
+      <Content>Continuous</Content>
+    </Column>
+  </Columns>
+  <MiningModels>
+    <MiningModel dwd:design-time-name="56897e26-703d-4b4d-96c6-dacdfb4cc7fa">
+      <ID>企业k-means聚类</ID>
+      <Name>企业k-means聚类</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Algorithm>Microsoft_Clustering</Algorithm>
+      <Columns>
+        <Column dwd:design-time-name="36fc63b6-9d37-457c-99e0-44ec5c3da6be">
+          <ID>企业名称</ID>
+          <Name>企业名称</Name>
+          <SourceColumnID>企业名称</SourceColumnID>
+          <Usage>Key</Usage>
+        </Column>
+        <Column dwd:design-time-name="1ad314fc-8358-47bd-8d12-33c7e29cf70f">
+          <ID>需求热度</ID>
+          <Name>需求热度</Name>
+          <SourceColumnID>需求热度</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="3d1fb65f-c500-489f-88b0-bbd8bbb54427">
+          <ID>索引页</ID>
+          <Name>索引页</Name>
+          <SourceColumnID>索引页</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="d5b18aec-5649-423c-b0ad-1411abedef8e">
+          <ID>索引值</ID>
+          <Name>索引值</Name>
+          <SourceColumnID>索引值</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="bc93b9f0-cc47-4d01-9a08-eba2e3f91768">
+          <ID>招聘数据计数</ID>
+          <Name>招聘数据计数</Name>
+          <SourceColumnID>招聘数据计数</SourceColumnID>
+        </Column>
+      </Columns>
+      <AllowDrillThrough>true</AllowDrillThrough>
+    </MiningModel>
+  </MiningModels>
+  <ddl100_100:HoldoutMaxPercent>50</ddl100_100:HoldoutMaxPercent>
+</MiningStructure>

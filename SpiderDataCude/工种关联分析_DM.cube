@@ -1,0 +1,627 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="27e5a239-6559-4c37-badc-25214506ebd5" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>工种关联分析_DM</ID>
+  <Name>工种关联分析_DM</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="facc9396-d5ee-45d2-abb4-d23470b60cb8">
+      <ID>Crawl Date</ID>
+      <Name>爬取时间</Name>
+      <DimensionID>时间维度</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="a75ac154-5439-427b-80d2-fe34745f61b5">
+          <AttributeID>Datetime</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="14df3458-cd0e-45ec-831b-f98463cafa60">
+          <AttributeID>D Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="2ca08ee9-7ab8-4702-9997-aa9b3ed643d8">
+          <AttributeID>Quaters Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="bcea2d4e-b382-480d-a704-d7262e446b40">
+          <AttributeID>Months Name</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="adec33ae-220b-40b4-90f3-d3a720443f16">
+          <HierarchyID>层次结构</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="5f700e59-02cb-429d-b0ac-b0119470ee50">
+      <ID>企业维度</ID>
+      <Name>企业维度</Name>
+      <DimensionID>企业维度</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="903ddfac-b6e4-40f8-bb79-45033042870b">
+          <AttributeID>企业名称</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="99ff31c8-10fe-452a-b376-a2b9958a5a9c">
+          <AttributeID>企业类型</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="eacef99c-ba7a-4bf4-ad39-743858f701fd">
+          <AttributeID>企业规模</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5b287f1d-dab9-4a8f-ad09-79fb3723dc1c">
+          <AttributeID>需求热度</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ac87eff6-203c-407d-9e2b-ca8bb081ed03">
+          <AttributeID>排序</AttributeID>
+          <AttributeHierarchyEnabled>false</AttributeHierarchyEnabled>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="d1b7576c-e882-4361-96f7-4dc6893da8f4">
+          <HierarchyID>层次结构</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="c0026557-2e18-428b-bbfe-2b585b0f2949">
+      <ID>Issuer Date</ID>
+      <Name>发布时间</Name>
+      <DimensionID>时间维度</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="03a4940a-3253-4c3c-bd36-ca9007b95ef2">
+          <AttributeID>Datetime</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="939645cc-293d-4970-a404-a477bb37d2b1">
+          <AttributeID>D Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="1e512bdf-58e2-4491-8f74-e4b603f328b3">
+          <AttributeID>Quaters Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e5c275c2-cc99-4bf9-9c72-6f761613b5ed">
+          <AttributeID>Months Name</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="9cbc2b8d-9ccf-42b4-a45c-09ca7b2d8af4">
+          <HierarchyID>层次结构</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="b9c75551-595b-4a16-997a-0804ccc6ada1">
+      <ID>城市维度</ID>
+      <Name>城市维度</Name>
+      <DimensionID>城市维度</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="754a3b0c-693a-4503-8c58-e918e212df48">
+          <AttributeID>城市</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="4c97e1ee-c9e8-42e8-80b4-6790b9e31569">
+          <AttributeID>城市热度</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d9679a5e-6227-4d0d-b53f-3a853e8270be">
+          <AttributeID>排序</AttributeID>
+          <AttributeHierarchyEnabled>false</AttributeHierarchyEnabled>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="c224bda5-69d3-4914-9011-e1ed66fd59d7">
+      <ID>需求维度</ID>
+      <Name>需求维度</Name>
+      <DimensionID>需求维度</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="42d0d797-3f84-4c0b-87d4-316e31d384e4">
+          <AttributeID>需求</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d72c20fc-4d63-47ea-821b-42c1268f7989">
+          <AttributeID>教育背景</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5fdf2d6a-bdf0-442a-a34b-b5a927d5bc6b">
+          <AttributeID>工作经验</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="02f25f50-1b30-434f-b37e-715f0f4e1671">
+          <HierarchyID>层次结构</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="3d2114ea-3eb2-4c40-9897-a9f6b57ac9e3">
+      <ID>工种维度</ID>
+      <Name>工种维度</Name>
+      <DimensionID>工种维度</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="2e762548-671a-4994-813e-e2df49de7e1b">
+          <AttributeID>工种</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="dcc3fc21-7594-4061-80a4-3b429cb3948e">
+          <AttributeID>一类工种</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5d111b7a-fcb8-4266-8362-a9f879d3a20a">
+          <AttributeID>二类工种</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="3e8cfdd3-3b69-4b5d-898d-c1a6723689f7">
+          <HierarchyID>层次结构</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="dddb15a2-5dc6-4439-87e8-d5b9d6bd82e6">
+      <ID>工种关联分析_DMDim</ID>
+      <Name>工种关联分析_DMDim</Name>
+      <DimensionID>工种关联分析_DMDim</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="8edeaf6f-6039-41d1-999b-6214f774eaba">
+          <AttributeID>ATTRIBUTE_NAME</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="043ea08e-960d-4fe5-a40d-fc2ad54e0b8d">
+          <AttributeID>PARENT_UNIQUE_NAME</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="8ef13b7b-b3e2-49de-8da6-15311910ccc4">
+          <AttributeID>NODE_RULE</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="bb271ab4-23b7-4c6d-861a-eb4a085951e6">
+          <AttributeID>NODE_SUPPORT</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="de0f4329-0abc-46ca-86b3-ab918cfb8f24">
+          <AttributeID>NODE_UNIQUE_NAME</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="f80072ab-caa6-4da7-b719-24200501012e">
+      <ID>招聘数据</ID>
+      <Name>智联数据</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="ee7e8dd1-9803-4c41-81a6-57bae1f0db25">
+          <ID>索引页</ID>
+          <Name>索引页</Name>
+          <AggregateFunction>None</AggregateFunction>
+          <Source dwd:design-time-name="a9acad7d-8aa5-4f5b-992b-28c96e08a00c">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="b4e5aaea-da56-4758-bb5f-e17c4c701e7e">
+              <TableID>dbo_FactData</TableID>
+              <ColumnID>page_num</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="1321891a-d467-4cdc-878b-ac0719f4eba0">
+          <ID>索引值</ID>
+          <Name>索引值</Name>
+          <AggregateFunction>None</AggregateFunction>
+          <Source dwd:design-time-name="97b706f0-ba54-462c-b325-6b0f147ff504">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="cb915c46-64e6-46b9-8629-41c889768624">
+              <TableID>dbo_FactData</TableID>
+              <ColumnID>index_num</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="823dbcd1-4015-4d89-9846-83cc0f958bd3">
+          <ID>工资下限</ID>
+          <Name>工资下限</Name>
+          <AggregateFunction>Min</AggregateFunction>
+          <Source dwd:design-time-name="c5a8b02e-8111-4ae6-962d-9ce84118ed96">
+            <DataType>BigInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="345787d9-75a6-4ca7-8fa1-f0f404f11ec7">
+              <TableID>dbo_FactData</TableID>
+              <ColumnID>MinSalaryNum</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="2650589b-a47a-4869-b718-43836918fd9e">
+          <ID>工资上限</ID>
+          <Name>工资上限</Name>
+          <AggregateFunction>Max</AggregateFunction>
+          <Source dwd:design-time-name="0ad05460-6a4f-4450-8af8-f45c40e00ac9">
+            <DataType>BigInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="d5c3ac51-867d-4424-8b25-378d6c315e62">
+              <TableID>dbo_FactData</TableID>
+              <ColumnID>MaxSalaryNum</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="6e0b4595-999f-4676-be40-d87e6135fbad">
+          <ID>招聘数据 计数</ID>
+          <Name>招聘数据计数</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="8abd1f41-6a70-44ba-93de-9bbed1bb3b1e">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="13f81b82-5078-4caf-9f61-19dd17fcbef0">
+              <TableID>dbo_FactData</TableID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="119eda4f-0db0-476c-8048-e03695e44777">
+          <ID>Max Salary Num</ID>
+          <Name>上限工资总和</Name>
+          <Source dwd:design-time-name="0adc6143-b89c-48f8-abb6-705fdd83f47f">
+            <DataType>BigInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="e0cc4dd4-9464-4873-a843-b906068df8a5">
+              <TableID>dbo_FactData</TableID>
+              <ColumnID>MaxSalaryNum</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="2f7f1304-7f9c-4623-8c59-46637500af27">
+          <ID>Min Salary Num</ID>
+          <Name>下限工资总和</Name>
+          <Source dwd:design-time-name="a5ceb9e4-26dd-44c5-b986-bd05b64ff365">
+            <DataType>BigInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="66657176-de9a-4bd0-b4a8-ad9ee1bb2920">
+              <TableID>dbo_FactData</TableID>
+              <ColumnID>MinSalaryNum</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <Source dwd:design-time-name="7139f51e-ee51-4f6f-88cd-9d2f2910f535">
+        <DataSourceID>.</DataSourceID>
+        <CubeID>ZhaopinCube</CubeID>
+        <MeasureGroupID>招聘数据</MeasureGroupID>
+        <Persistence>Metadata</Persistence>
+        <RefreshInterval>PT1S</RefreshInterval>
+      </Source>
+      <StorageMode>Molap</StorageMode>
+      <EstimatedRows>869681</EstimatedRows>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="cbb18276-7ad1-4e43-b708-55d130535c6e">
+          <CubeDimensionID>Crawl Date</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="e8865bc6-2b05-4848-acc8-40c76adb4307">
+              <AttributeID>Datetime</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="efcb054c-864a-4a97-a863-19150613a1c8">
+                  <DataType>Date</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="33544ddb-b647-4971-9ee3-006d2836c1ef">
+                    <TableID>dbo_FactData</TableID>
+                    <ColumnID>crawl_date</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="9b045826-4339-4b88-9452-a9c097ac7cfe">
+          <CubeDimensionID>企业维度</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="72ac9113-4899-4653-8089-d67c0ac073aa">
+              <AttributeID>企业名称</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="bce1ee73-3104-47f4-965b-2a0dad949d7a">
+                  <DataType>WChar</DataType>
+                  <DataSize>150</DataSize>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="79460eb4-5bb7-444a-ae96-15c592d4b979">
+                    <TableID>dbo_FactData</TableID>
+                    <ColumnID>company_name</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="40410ed5-af82-4170-a9a4-43f4dcfb9047">
+          <CubeDimensionID>Issuer Date</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="39d3f997-eb1b-472a-8b53-462fe283358a">
+              <AttributeID>Datetime</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="1583da07-0767-4243-862c-16f025ba43b4">
+                  <DataType>Date</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="6a2b4c56-ee5e-4b31-b427-b4b4048d27de">
+                    <TableID>dbo_FactData</TableID>
+                    <ColumnID>issuer_date</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="0b996292-d4d1-4111-93c4-c135ad1d27e8">
+          <CubeDimensionID>城市维度</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="c7085ae4-ccd2-4c70-ad59-88890eb8d247">
+              <AttributeID>城市</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="0237011c-8913-49f5-8d24-d7609c119a2d">
+                  <DataType>WChar</DataType>
+                  <DataSize>260</DataSize>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="5deb34e0-c042-4780-9661-378c3659d0f4">
+                    <TableID>dbo_FactData</TableID>
+                    <ColumnID>company_address</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="23455cd0-cb47-4718-bb26-e2472e72063c">
+          <CubeDimensionID>需求维度</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="05a28b90-dbe3-4523-ac22-b0ca54a8ea42">
+              <AttributeID>需求</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="b5732db0-5edc-42a1-9bc0-a8fbdbbc8b5d">
+                  <DataType>WChar</DataType>
+                  <DataSize>16</DataSize>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="d167fc46-bd40-48e9-96c1-bb0675478ed3">
+                    <TableID>dbo_FactData</TableID>
+                    <ColumnID>RequireKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="c29d3732-8aad-4f8b-b218-9bf87083c807">
+          <CubeDimensionID>工种维度</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="b9a2a8d5-0d75-4b76-bf0b-1389e2acf82b">
+              <AttributeID>工种</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="0f761028-ee51-4854-8d40-94e9bb6db626">
+                  <DataType>WChar</DataType>
+                  <DataSize>111</DataSize>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="dd529e36-7b1b-48fc-88c4-fda5bf6e5103">
+                    <TableID>dbo_FactData</TableID>
+                    <ColumnID>full_title</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="DataMiningMeasureGroupDimension" dwd:design-time-name="da35d820-763d-4e72-abe3-01ba7a41aa23">
+          <CubeDimensionID>工种关联分析_DMDim</CubeDimensionID>
+          <CaseCubeDimensionID>企业维度</CaseCubeDimensionID>
+        </Dimension>
+      </Dimensions>
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="5d49c80f-6364-4b5c-95ff-a9fa39008c92">
+      <ID>智联数据</ID>
+      <Name>企业</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="18087f50-356d-4071-9a33-5812eb3d355d">
+          <ID>Company Name 非重复计数</ID>
+          <Name>企业数</Name>
+          <AggregateFunction>DistinctCount</AggregateFunction>
+          <DataType>Integer</DataType>
+          <Source dwd:design-time-name="bcbef2c8-0c52-48f1-b18c-8851303fdb73">
+            <DataType>WChar</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="19a7ffcd-8980-4325-81f4-5d69a0bb153a">
+              <TableID>dbo_FactData</TableID>
+              <ColumnID>company_name</ColumnID>
+            </Source>
+          </Source>
+          <FormatString>#,#</FormatString>
+        </Measure>
+      </Measures>
+      <Source dwd:design-time-name="36f6b9f8-3222-4162-9231-63f0b5fa8163">
+        <DataSourceID>.</DataSourceID>
+        <CubeID>ZhaopinCube</CubeID>
+        <MeasureGroupID>智联数据</MeasureGroupID>
+        <Persistence>Metadata</Persistence>
+        <RefreshInterval>PT1S</RefreshInterval>
+      </Source>
+      <StorageMode>Molap</StorageMode>
+      <EstimatedRows>869681</EstimatedRows>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="838ba7b2-4bf0-4d63-8f3e-b942c15038a8">
+          <CubeDimensionID>Crawl Date</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="5d2e4cc6-e64c-4af9-bfd5-3eef42a9777c">
+              <AttributeID>Datetime</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="3c228c4c-e1a2-4c6c-a0fd-e73ddbe6e1d1">
+                  <DataType>Date</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="c7ed085e-2aec-4e37-82ea-c152e90a4d58">
+                    <TableID>dbo_FactData</TableID>
+                    <ColumnID>crawl_date</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="b9d1450f-f922-48d4-928c-c013996598d4">
+          <CubeDimensionID>企业维度</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="5a4155be-a6de-42f8-a334-22c0e190a374">
+              <AttributeID>企业名称</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="22065fc7-5f79-4c59-9b68-59226099fdc6">
+                  <DataType>WChar</DataType>
+                  <DataSize>150</DataSize>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="02914b45-7539-45a3-8bdd-f8a88889e539">
+                    <TableID>dbo_FactData</TableID>
+                    <ColumnID>company_name</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="5e5f2408-090b-4a5d-a4bf-36bc8a4df282">
+          <CubeDimensionID>Issuer Date</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="85e56f6d-172d-4c0c-8e5f-25acd93849bd">
+              <AttributeID>Datetime</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="989b942f-3386-429b-a1fa-39ffa9d8538c">
+                  <DataType>Date</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="14bd0353-ea48-44b8-8b73-cbc5d5448d26">
+                    <TableID>dbo_FactData</TableID>
+                    <ColumnID>issuer_date</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="7175ab78-ad73-4c87-802a-7f757cedda85">
+          <CubeDimensionID>城市维度</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="43cf06d7-f00c-4c3e-a24d-95ddf2eaa07a">
+              <AttributeID>城市</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="d5a6e93f-4516-4375-9305-c046a66d0e8d">
+                  <DataType>WChar</DataType>
+                  <DataSize>260</DataSize>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="9618409a-b003-44aa-95b9-8728e66e5b08">
+                    <TableID>dbo_FactData</TableID>
+                    <ColumnID>company_address</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="1fa19013-ac63-454d-bcbf-f76b57f13254">
+          <CubeDimensionID>需求维度</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="a3037856-473f-406c-ac81-2299a319a5ba">
+              <AttributeID>需求</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="23934587-20df-4786-b29f-d5b83e7f8efb">
+                  <DataType>WChar</DataType>
+                  <DataSize>16</DataSize>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="55bbc722-4572-4101-98ac-950aa651eb85">
+                    <TableID>dbo_FactData</TableID>
+                    <ColumnID>RequireKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="910a3fc0-c7ab-4a67-987a-e18d593adcd3">
+          <CubeDimensionID>工种维度</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="91a33bb6-d24a-493c-b4c3-a58b6bae0bb4">
+              <AttributeID>工种</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="e88ced57-562d-4c37-997c-76f3c38912f3">
+                  <DataType>WChar</DataType>
+                  <DataSize>111</DataSize>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="583645cd-07a8-426d-acc6-1462efde7869">
+                    <TableID>dbo_FactData</TableID>
+                    <ColumnID>full_title</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="DataMiningMeasureGroupDimension" dwd:design-time-name="e77dbacc-f315-4cf6-b140-8a06ca8ef2f8">
+          <CubeDimensionID>工种关联分析_DMDim</CubeDimensionID>
+          <CaseCubeDimensionID>企业维度</CaseCubeDimensionID>
+        </Dimension>
+      </Dimensions>
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="0c98f310-9129-452d-938b-b6e220aa39fe">
+    <DataSourceViewID>Zhaopin Spider Data Dw</DataSourceViewID>
+  </Source>
+  <MdxScripts>
+    <MdxScript dwd:design-time-name="1d7b5cf6-e521-49b3-a42a-1fd49d6a072f">
+      <ID>MdxScript</ID>
+      <Name>MdxScript</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <Commands>
+        <Command>
+          <Text>/*
+CALCULATE 命令控制多维数据集中叶单元的聚合。
+如果删除或修改该 CALCULATE 命令，会影响该多维数据集内的数据。
+仅应在手动指定多维数据集的聚合方式后编辑此命令。
+*/
+CALCULATE;     
+CREATE MEMBER CURRENTCUBE.[Measures].[最高工资平均值]
+ AS [Measures].[上限工资总和] / [Measures].[招聘数据计数], 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = '智联数据';    
+CREATE MEMBER CURRENTCUBE.[Measures].[最低工资平均值]
+ AS [Measures].[下限工资总和] / [Measures].[招聘数据计数], 
+FORMAT_STRING = "#,#", 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = '智联数据';    
+CREATE MEMBER CURRENTCUBE.[Measures].[工种需求百分比]
+ AS ([Measures].[招聘数据计数]) / ([Measures].[招聘数据计数],[工种维度].[工种层次].[All]), 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = '智联数据';    
+CREATE MEMBER CURRENTCUBE.[Measures].[工种父级百分比]
+ AS ([Measures].[招聘数据计数]) / ([Measures].[招聘数据计数],[工种维度].[工种层次].CurrentMember.Parent), 
+FORMAT_STRING = "Percent", 
+NON_EMPTY_BEHAVIOR = {[Measures].[招聘数据计数]}, 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = '智联数据'  ; </Text>
+        </Command>
+      </Commands>
+    </MdxScript>
+  </MdxScripts>
+</Cube>

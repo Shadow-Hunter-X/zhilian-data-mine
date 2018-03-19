@@ -1,0 +1,343 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/25/2018 6:40:31 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-V3KCCRU"
+  DTS:CreatorName="DESKTOP-V3KCCRU\NEO"
+  DTS:DTSID="{47CD1164-371A-4E50-B71B-7B039E9C9F83}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3008.28"
+  DTS:LocaleID="2052"
+  DTS:ObjectName="BuildCity"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{D2B08662-73AB-4E86-8DA8-7F8FD2244B11}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\BuildCityData"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="数据流任务"
+      DTS:DTSID="{F1F15999-C821-4AE0-AA42-82B879CA9DF5}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="BuildCityData"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\BuildCityData\DimCity"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="将数据加载到使用数据库表或视图的符合 ADO.NET 的数据库中。将数据加载到新表或现有表中。例如，使用适用于 ODBC 的 ADO.NET 访问接口将数据加载到 ODBC 目标中。;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; 保留所有权利; http://www.microsoft.com/sql/support;2"
+              description="将数据加载到使用数据库表或视图的符合 ADO.NET 的数据库中。将数据加载到新表或现有表中。例如，使用适用于 ODBC 的 ADO.NET 访问接口将数据加载到 ODBC 目标中。"
+              name="DimCity"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="目标数据库表名。"
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"DimCity"</property>
+                <property
+                  dataType="System.Int32"
+                  description="指定每批的行数。默认值为 0，即使用与 SSIS 内部缓冲区相同的大小。 "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="命令超时前等待的时间(秒)。值为 0，表示无限期等待。 "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="指定是否使用 SqlBulkCopy 接口来改进大容量插入操作的性能。只有某些特定提供程序支持此接口。"
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\BuildCityData\DimCity.Connections[IDbConnection]"
+                  connectionManagerID="{091ADE31-0DEC-4A93-B9AF-8FD2F1485793}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.ZhaopinSpiderDataDw]"
+                  description="托管连接管理器"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\BuildCityData\DimCity.Inputs[ADO NET 目标输入]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ADO NET 目标输入">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\BuildCityData\DimCity.Inputs[ADO NET 目标输入].Columns[company_address]"
+                      cachedDataType="wstr"
+                      cachedLength="260"
+                      cachedName="company_address"
+                      externalMetadataColumnId="Package\BuildCityData\DimCity.Inputs[ADO NET 目标输入].ExternalColumns[company_address]"
+                      lineageId="Package\BuildCityData\GetCityData.Outputs[ADO NET 源输出].Columns[company_address]" />
+                    <inputColumn
+                      refId="Package\BuildCityData\DimCity.Inputs[ADO NET 目标输入].Columns[count_num]"
+                      cachedDataType="i4"
+                      cachedName="count_num"
+                      externalMetadataColumnId="Package\BuildCityData\DimCity.Inputs[ADO NET 目标输入].ExternalColumns[count_num]"
+                      lineageId="Package\BuildCityData\GetCityData.Outputs[ADO NET 源输出].Columns[count_num]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\BuildCityData\DimCity.Inputs[ADO NET 目标输入].ExternalColumns[company_address]"
+                      dataType="wstr"
+                      length="260"
+                      name="company_address" />
+                    <externalMetadataColumn
+                      refId="Package\BuildCityData\DimCity.Inputs[ADO NET 目标输入].ExternalColumns[count_num]"
+                      dataType="i4"
+                      name="count_num" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\BuildCityData\DimCity.Outputs[ADO NET 目标错误输出]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ADO NET 目标错误输出"
+                  synchronousInputId="Package\BuildCityData\DimCity.Inputs[ADO NET 目标输入]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\BuildCityData\DimCity.Outputs[ADO NET 目标错误输出].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\BuildCityData\DimCity.Outputs[ADO NET 目标错误输出].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\BuildCityData\DimCity.Outputs[ADO NET 目标错误输出].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\BuildCityData\DimCity.Outputs[ADO NET 目标错误输出].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\BuildCityData\GetCityData"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="通过使用相应的 .NET Framework 数据访问接口来使用 SQL Server、OLE DB、ODBC 或 Oracle 中的数据。使用 Transact-SQL 语句定义结果集。例如，使用适用于 SQL Server 的 .NET Framework 数据访问接口从 SQL Server 中提取数据。;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; 保留所有权利; http://www.microsoft.com/sql/support;4"
+              description="通过使用相应的 .NET Framework 数据访问接口来使用 SQL Server、OLE DB、ODBC 或 Oracle 中的数据。使用 Transact-SQL 语句定义结果集。例如，使用适用于 SQL Server 的 .NET Framework 数据访问接口从 SQL Server 中提取数据。"
+              name="GetCityData"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="指定组件用来提取数据的 SQL 语句。"
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+        company_address 
+	   ,COUNT(company_address) count_num
+  FROM [ZhaopinSpiderData].[dbo].[JobInformation]
+  GROUP BY company_address ORDER BY count_num DESC</property>
+                <property
+                  dataType="System.Int32"
+                  description="命令超时前等待的时间(秒)。值为 0，表示无限期等待。"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="指示是否允许非字符串外部列隐式地转换为输出列中的字符串。"
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="源数据库表名。"
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="指定检索外部列信息的模式"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\BuildCityData\GetCityData.Connections[IDbConnection]"
+                  connectionManagerID="{A81BC240-E138-4117-8489-A2497DE91F1F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.ZhaopinSpiderData]"
+                  description="托管连接管理器"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\BuildCityData\GetCityData.Outputs[ADO NET 源输出]"
+                  name="ADO NET 源输出">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\BuildCityData\GetCityData.Outputs[ADO NET 源输出].Columns[company_address]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BuildCityData\GetCityData.Outputs[ADO NET 源输出].ExternalColumns[company_address]"
+                      length="260"
+                      lineageId="Package\BuildCityData\GetCityData.Outputs[ADO NET 源输出].Columns[company_address]"
+                      name="company_address"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\BuildCityData\GetCityData.Outputs[ADO NET 源输出].Columns[count_num]"
+                      dataType="i4"
+                      errorOrTruncationOperation="转换"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\BuildCityData\GetCityData.Outputs[ADO NET 源输出].ExternalColumns[count_num]"
+                      lineageId="Package\BuildCityData\GetCityData.Outputs[ADO NET 源输出].Columns[count_num]"
+                      name="count_num"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\BuildCityData\GetCityData.Outputs[ADO NET 源输出].ExternalColumns[company_address]"
+                      dataType="wstr"
+                      length="260"
+                      name="company_address" />
+                    <externalMetadataColumn
+                      refId="Package\BuildCityData\GetCityData.Outputs[ADO NET 源输出].ExternalColumns[count_num]"
+                      dataType="i4"
+                      name="count_num" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\BuildCityData\GetCityData.Outputs[ADO NET 源错误输出]"
+                  isErrorOut="true"
+                  name="ADO NET 源错误输出">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\BuildCityData\GetCityData.Outputs[ADO NET 源错误输出].Columns[company_address]"
+                      dataType="wstr"
+                      length="260"
+                      lineageId="Package\BuildCityData\GetCityData.Outputs[ADO NET 源错误输出].Columns[company_address]"
+                      name="company_address" />
+                    <outputColumn
+                      refId="Package\BuildCityData\GetCityData.Outputs[ADO NET 源错误输出].Columns[count_num]"
+                      dataType="i4"
+                      lineageId="Package\BuildCityData\GetCityData.Outputs[ADO NET 源错误输出].Columns[count_num]"
+                      name="count_num" />
+                    <outputColumn
+                      refId="Package\BuildCityData\GetCityData.Outputs[ADO NET 源错误输出].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\BuildCityData\GetCityData.Outputs[ADO NET 源错误输出].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\BuildCityData\GetCityData.Outputs[ADO NET 源错误输出].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\BuildCityData\GetCityData.Outputs[ADO NET 源错误输出].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\BuildCityData.Paths[ADO NET 源输出]"
+              endId="Package\BuildCityData\DimCity.Inputs[ADO NET 目标输入]"
+              name="ADO NET 源输出"
+              startId="Package\BuildCityData\GetCityData.Outputs[ADO NET 源输出]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--此 CDATA 部分包含包的布局信息。该部分包括(x,y)坐标、宽度和高度之类的信息。-->
+<!--如果您手动编辑此部分并且出错，则可以删除此部分。 -->
+<!--该包仍将能够正常加载，但以前的布局信息将丢失，并且设计器将自动在设计图面上重新排列这些元素。-->
+<Objects
+  Version="8">
+  <!--下面的每个节点都将包含不会影响运行时行为的属性。-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\BuildCityData"
+          TopLeft="269.999989271164,51.999997343336" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\BuildCityData">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="121,42"
+          Id="Package\BuildCityData\DimCity"
+          TopLeft="266.666656070286,141.142849931912" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\BuildCityData\GetCityData"
+          TopLeft="260.833322968748,29.714284196192" />
+        <EdgeLayout
+          Id="Package\BuildCityData.Paths[ADO NET 源输出]"
+          TopLeft="330.249989519517,71.714284196192">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,69.4285657357199"
+              Start="0,0"
+              End="0,61.9285657357199">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,61.9285657357199" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\BuildCityData\DimCity">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\BuildCityData\GetCityData">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
