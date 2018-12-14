@@ -1,4 +1,52 @@
 # zhilian-data-mine
+
+一、      爬取前的页面分析
+
+首先查看”智联招聘”网站首页，在首页上可以发现各职业分类的列表，如下图所示。
+![分类](https://github.com/Shadow-Hunter-X/Crawl-Recruit-Data/blob/master/res/res1.jpg)
+
+	查看网页源代码，并可以直接看到网页源代码（如下图样例），这样对于爬取操作就变得简单一些。
+![源码](https://github.com/Shadow-Hunter-X/Crawl-Recruit-Data/blob/master/res/res2.jpg)
+即在有源码的情况下，可以先将首页上所有的职业链接都爬取下来后存放到数据库中，后在有选择性的进行对感兴趣的职业进行爬取。
+
+	进入到特定的职业页面上，查看页面信息（如跳转到“网站构架师”），如下图。
+![样式](https://github.com/Shadow-Hunter-X/Crawl-Recruit-Data/blob/master/res/res3.jpg)
+
+查看网页源代码，进行提取对应招聘信息列表的 Xpath或Css Selector表达式，如下图的所示。
+![选择](https://github.com/Shadow-Hunter-X/Crawl-Recruit-Data/blob/master/res/res4.jpg)
+
+详细查看列表中的每项中包含的信息，筛选提取有用信息，并在scrapy框架中的items文件中指定对应的存储结构体。
+
+	在爬取完一页后，需要跳转到下一页
+由于在每种类型下的工作岗位数不同，所以需要在爬取前，先将需要爬取的页数读取出。
+![分页](https://github.com/Shadow-Hunter-X/Crawl-Recruit-Data/blob/master/res/res5.jpg)
+
+二、	编写爬虫
+
+以“软件”标签下的职业链接进行说明爬取操作。
+	首先对从首页抓取所有链接进行处理，构建起url关系的字典，如下所示，在实际爬取过程中，就遍历字典进行操作，对应的字典可以存放到setting文件中。
+	程序设计：item设计，根据前期对页面分析，构建相对应的item，在item文件中定义的数据就是要进行爬取和存储的数据。但数据爬取完毕后，将数据存储到数据库中，分别存放到 sqlserver 和 mongodb中。
+	当Item在Spider中被收集之后，它将会被传递到Item Pipeline，一些组件会按照一定的顺序执行对Item的处理。对应的pipeline文件的代码如下，主要是进行SQLServer和mongodb的存储操作。对于Sqlserver插入数据时可能会报错，一般是由于构建SQL语句中的一些符号问题，这类问题难以直接通过输出信息进行排查，所以需要连接到SQLServer进行日志查看或sql语句抓取。
+	编写爬虫
+为了让http请求更接近真实浏览器的请求情况，可以添加模拟的http消息请求头。
+
+三、	分析数据
+通过抓取几类数据，得到120万条数据，分别在SQLServer和mongodb中存储，对于存储在SQLServer中的数据可以结合SQLServer BI进行数据分析，而在mongodb中的数据可以和spark结合进行数据，在mongodb中有接近100万个文档。
+![分页](https://github.com/Shadow-Hunter-X/Crawl-Recruit-Data/blob/master/res/ana1.jpg)
+
+	使用 SQLServer BI分析
+	打开SSDT，创建 Integration Services工程，创建一个SSIS包，构建“数据事件探查任务”。
+![分页](https://github.com/Shadow-Hunter-X/Crawl-Recruit-Data/blob/master/res/ana2.jpg)
+	通过“数据事件探查任务”处理后得到分析结果，挑选一些分析结果进行说明。
+![分页](https://github.com/Shadow-Hunter-X/Crawl-Recruit-Data/blob/master/res/ana3.jpg)
+招聘企业规模分布情况:
+![分页](https://github.com/Shadow-Hunter-X/Crawl-Recruit-Data/blob/master/res/ana4.jpg)
+招聘企业类型分布情况：
+![分页](https://github.com/Shadow-Hunter-X/Crawl-Recruit-Data/blob/master/res/ana5.jpg)
+应聘者教育背景的要求
+![分页](https://github.com/Shadow-Hunter-X/Crawl-Recruit-Data/blob/master/res/ana6.jpg)
+
+
 智联招聘网站爬取和挖掘
 通过前期编写的Python爬虫持续爬起更多的数据；完善对Sqlserver多维数据集的处理，使用数据挖掘功能对多维数据进行挖掘，并使用PowerBI制作报表，产出Excel分析数据；使用Python对Excel数据进行再次分析；尝试使用Python scikit-learn进行数据挖掘。
 
